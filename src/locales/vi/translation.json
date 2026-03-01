@@ -1,0 +1,24 @@
+{
+    "header": {
+        "features": "Tính năng",
+        "booths": "Mẫu Booth",
+        "solutions": "Giải pháp",
+        "pricing": "Bảng giá",
+        "contact": "Liên hệ"
+    },
+    "hero": {
+        "badge": "Giải pháp Photobooth B2B Toàn Diện",
+        "title_1": "Khởi nghiệp Photobooth AI:",
+        "title_2": "Vốn ít, Công nghệ dẫn đầu.",
+        "desc_1": "Cung cấp trọn gói phần cứng và phần mềm quản lý thông minh. Tích hợp AI tạo hình độc quyền giúp bạn khác biệt hoàn toàn với thị trường và mang lại ",
+        "desc_strong": "lợi nhuận bền vững",
+        "desc_2": "\"Được phát triển bởi các kỹ sư phần mềm 'cao tay' hiện đang công tác trong và ngoài nước, có kinh nghiệm sâu về ứng dụng AI, hứa hẹn đáp ứng mọi nhu cầu tùy biến của bạn.\"",
+        "btn_quote": "Nhận báo giá ngay",
+        "btn_demo": "Xem Demo Phần Mềm"
+    },
+    "lang": {
+        "vi": "Tiếng Việt",
+        "en": "English",
+        "zh": "中文"
+    }
+}

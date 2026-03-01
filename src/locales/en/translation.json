@@ -1,0 +1,24 @@
+{
+    "header": {
+        "features": "Features",
+        "booths": "Booth Models",
+        "solutions": "Solutions",
+        "pricing": "Pricing",
+        "contact": "Contact"
+    },
+    "hero": {
+        "badge": "Comprehensive B2B Photobooth Solution",
+        "title_1": "Start your AI Photobooth Business:",
+        "title_2": "Low Capital, Leading Technology.",
+        "desc_1": "Providing complete hardware and smart management software packages. Exclusive AI shaping integration helps you completely differentiate from the market and bring ",
+        "desc_strong": "sustainable profits",
+        "desc_2": "\"Developed by top-tier software engineers working domestically and internationally, with deep experience in AI applications, promising to meet all your customization needs.\"",
+        "btn_quote": "Get a quote now",
+        "btn_demo": "View Software Demo"
+    },
+    "lang": {
+        "vi": "Tiếng Việt",
+        "en": "English",
+        "zh": "中文"
+    }
+}
