@@ -1,32 +1,16 @@
 import { motion } from 'framer-motion';
 import { Play } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from 'react-i18next';
 
 const concepts = [
-    {
-        id: 1,
-        title: 'Eco-Green Booth',
-        desc: 'Thiết kế khung nhôm tối giản kết hợp dây leo tự nhiên, biến cỗ máy thành món đồ decor tinh tế, hòa quyện hoàn hảo vào các không gian cafe sân vườn hoặc studio phong cách chữa lành.', 
-        img: '/shop-04.jpg',
-        badge: 'Trending'
-    },
-    {
-        id: 2,
-        title: 'Urban Garden White',
-        desc: 'Thiết kế trắng tinh khôi kết hợp rèm xanh olive dịu mát, tạo điểm nhấn thanh lịch giữa không gian ngập tràn ánh sáng và cây xanh.',
-        img: '/shop-05.jpg',
-        badge: 'Elegant'
-    },
-    {
-        id: 3,
-        title: 'Skyview Villa Booth',
-        desc: 'Thiết kế khung nhôm thanh mảnh kết hợp rèm nhung đỏ quý phái, hòa hợp tuyệt đối với những không gian có view kính panorama hoặc sảnh tiệc cao cấp.',
-        img: '/shop-06.jpg',
-        badge: 'Events'
-    }
+    { id: 1, img: '/shop-04.jpg' },
+    { id: 2, img: '/shop-05.jpg' },
+    { id: 3, img: '/shop-06.jpg' }
 ];
 
 export default function ConceptGallery() {
+    const { t } = useTranslation();
     return (
         <section className="relative py-24 overflow-hidden bg-slate-50/50">
             {/* Ambient Background Blobs */}
@@ -46,10 +30,10 @@ export default function ConceptGallery() {
                         transition={{ duration: 0.5 }}
                     >
                         <h2 className="mb-6 text-4xl font-extrabold tracking-tight md:text-5xl text-slate-900">
-                            Tùy biến <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500">Mọi Concept Không Gian</span>
+                            {t('conceptGallery.header_title').split(' ')[0]} <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500">{t('conceptGallery.header_title').split(' ').slice(1).join(' ')}</span>
                         </h2>
                         <p className="text-lg leading-relaxed text-slate-500">
-                            Với thiết kế có tính "Modular" dạng khối ghép, VibeBooth dễ dàng chuyển mình khớp với concept nội thất sẵn có của bạn - từ sự dịu dàng của Korea Style đến độ ngầu của Cyberpunk.
+                            {t('conceptGallery.header_desc')}
                         </p>
                     </motion.div>
                 </div>
@@ -86,14 +70,14 @@ export default function ConceptGallery() {
                                     {/* Glassmorphism Badge */}
                                     <div className="absolute z-20 top-4 right-4">
                                         <span className="px-3 py-1.5 text-xs font-bold tracking-wide text-slate-800 bg-white/85 backdrop-blur-md rounded-full shadow-sm">
-                                            {concept.badge}
+                                            {t(`conceptGallery.concepts.${concept.id - 1}.badge`)}
                                         </span>
                                     </div>
 
                                     {/* Image with zoom effect */}
                                     <img
                                         src={concept.img}
-                                        alt={concept.title}
+                                        alt={t(`conceptGallery.concepts.${concept.id - 1}.title`)}
                                         className="object-cover w-full h-full transition-transform duration-700 ease-out group-hover:scale-110"
                                         onError={(e) => {
                                             e.currentTarget.src = `https://placehold.co/600x800/f8fafc/94a3b8?text=Concept+${concept.id}`;
@@ -114,10 +98,10 @@ export default function ConceptGallery() {
                                 {/* Content Container */}
                                 <CardContent className="relative z-10 flex flex-col flex-1 p-6 bg-white">
                                     <h3 className="mb-3 text-2xl font-bold transition-colors duration-300 text-slate-900 group-hover:text-pink-600 line-clamp-1">
-                                        {concept.title}
+                                        {t(`conceptGallery.concepts.${concept.id - 1}.title`)}
                                     </h3>
                                     <p className="flex-1 text-sm leading-relaxed text-slate-500 line-clamp-3">
-                                        {concept.desc}
+                                        {t(`conceptGallery.concepts.${concept.id - 1}.desc`)}
                                     </p>
                                 </CardContent>
                             </Card>

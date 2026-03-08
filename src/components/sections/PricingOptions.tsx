@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle2, Star, ShieldCheck, HeartHandshake, Code2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const pricingPlans = [
     {
@@ -91,6 +92,7 @@ const whyUs = [
 ];
 
 export default function PricingOptions() {
+    const { t } = useTranslation();
     return (
         <section id="pricing" className="py-24 bg-white">
             <div className="container mx-auto px-4 md:px-6">
@@ -98,13 +100,13 @@ export default function PricingOptions() {
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <Badge className="mb-4 bg-teal-100/80 text-teal-800 hover:bg-teal-200/80 border-none px-4 py-1">
-                        Bảng giá Đầu Tư
+                        {t('pricing.badge')}
                     </Badge>
                     <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-                        Đầu tư một lần, <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-pink-500">Lợi nhuận dài hạn</span>
+                        {t('pricing.title_prefix', 'Investment')}, <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-pink-500">{t('pricing.title')}</span>
                     </h2>
                     <p className="text-lg text-slate-600">
-                        Lựa chọn gói đầu tư phù hợp với quy mô kinh doanh của bạn. Chúng tôi minh bạch mọi chi phí để bạn dễ dàng tính toán ROI.
+                        {t('pricing.desc')}
                     </p>
                 </div>
 
@@ -130,9 +132,9 @@ export default function PricingOptions() {
                                 </div>
                             )}
 
-                            <div className="mb-6">
-                                <p className="text-sm font-bold text-slate-500 mb-1">{plan.theme}</p>
-                                <h3 className="text-2xl font-bold text-slate-900">{plan.name}</h3>
+                                <div className="mb-6">
+                                <p className="text-sm font-bold text-slate-500 mb-1">{t(`pricing.plans.${idx}.theme`, plan.theme)}</p>
+                                <h3 className="text-2xl font-bold text-slate-900">{t(`pricing.plans.${idx}.name`, plan.name)}</h3>
                             </div>
 
                             <div className="mb-6 space-y-4 bg-white/60 p-4 rounded-xl">
@@ -149,14 +151,14 @@ export default function PricingOptions() {
                             </div>
 
                             <p className="text-slate-600 text-sm mb-6 min-h-[40px]">
-                                {plan.description}
+                                {t(`pricing.plans.${idx}.description`, plan.description)}
                             </p>
 
                             <ul className="flex-1 space-y-3 mb-8">
                                 {plan.features.map((feature, i) => (
                                     <li key={i} className="flex gap-3 text-sm text-slate-700">
                                         <CheckCircle2 className="w-5 h-5 text-teal-500 shrink-0" />
-                                        <span>{feature}</span>
+                                        <span>{t(`pricing.plans.${idx}.features.${i}`, feature)}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -166,7 +168,7 @@ export default function PricingOptions() {
                                 className={`w-full rounded-2xl h-12 font-semibold ${plan.button === 'default' ? 'bg-teal-600 hover:bg-teal-700 shadow-xl shadow-teal-500/20' : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-900'
                                     }`}
                             >
-                                Nhận tư vấn gói này
+                                {t('pricing.button_text')}
                             </Button>
                         </motion.div>
                     ))}

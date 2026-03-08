@@ -1,6 +1,12 @@
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
+    const { t } = useTranslation();
+    const quickLinks = (t('footer.quick_links', { returnObjects: true }) as any) || [];
+    const solutions = (t('footer.solutions', { returnObjects: true }) as any) || [];
+    const contact = (t('footer.contact', { returnObjects: true }) as any) || {};
+
     return (
         <footer id="contact" className="bg-slate-950 text-slate-300 pt-20 pb-10 border-t border-slate-800">
             <div className="container mx-auto px-4 md:px-6">
@@ -17,7 +23,7 @@ export default function Footer() {
                             </span>
                         </div>
                         <p className="text-sm text-slate-400 leading-relaxed">
-                            "Cái bạn cần là vibe. Chúng tôi sẽ hiện thực nó" - VibeBooth chuyên xây dựng hệ thống Photobooth thông minh và cung cấp giải pháp không gian tối ưu cho mọi mô hình.
+                            {t('footer.brand_tagline')} - VibeBooth chuyên xây dựng hệ thống Photobooth thông minh và cung cấp giải pháp không gian tối ưu cho mọi mô hình.
                         </p>
                         <div className="flex gap-4">
                             <a href="https://www.facebook.com/profile.php?id=61573162288644" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-teal-500 hover:border-teal-400 hover:text-white transition-all text-slate-400">
@@ -34,41 +40,39 @@ export default function Footer() {
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-white font-bold mb-6">Liên Kết Nhanh</h4>
+                        <h4 className="text-white font-bold mb-6">{t('footer.quick_links_title', 'Quick Links')}</h4>
                         <ul className="flex flex-col gap-3">
-                            <li><a href="#" className="hover:text-teal-400 transition-colors">Về chúng tôi</a></li>
-                            <li><a href="#features" className="hover:text-teal-400 transition-colors">Tính năng phần mềm</a></li>
-                            <li><a href="#solutions" className="hover:text-teal-400 transition-colors">Giải pháp chuỗi</a></li>
-                            <li><a href="#pricing" className="hover:text-teal-400 transition-colors">Bảng giá đầu tư</a></li>
+                            {quickLinks.map((link: any, i: number) => (
+                                <li key={i}><a href="#" className="hover:text-teal-400 transition-colors">{link}</a></li>
+                            ))}
                         </ul>
                     </div>
 
                     {/* Solutions */}
                     <div>
-                        <h4 className="text-white font-bold mb-6">Giải Pháp</h4>
+                        <h4 className="text-white font-bold mb-6">{t('footer.solutions_title', 'Solutions')}</h4>
                         <ul className="flex flex-col gap-3">
-                            <li><a href="#" className="hover:text-pink-400 transition-colors">Photobooth cho Quán Cafe</a></li>
-                            <li><a href="#" className="hover:text-pink-400 transition-colors">Photobooth Sự kiện (Event)</a></li>
-                            <li><a href="#" className="hover:text-pink-400 transition-colors">Setup Shop Chuyên Dụng</a></li>
-                            <li><a href="#" className="hover:text-pink-400 transition-colors">Nhượng Quyền Thương Hiệu</a></li>
+                            {solutions.map((s: any, i: number) => (
+                                <li key={i}><a href="#" className="hover:text-pink-400 transition-colors">{s}</a></li>
+                            ))}
                         </ul>
                     </div>
 
                     {/* Contact */}
                     <div>
-                        <h4 className="text-white font-bold mb-6">Liên Hệ</h4>
+                        <h4 className="text-white font-bold mb-6">{t('footer.contact_title', 'Contact')}</h4>
                         <ul className="flex flex-col gap-4 text-sm">
                             <li className="flex items-start gap-3">
                                 <MapPin className="w-5 h-5 text-teal-400 shrink-0 mt-0.5" />
-                                <span>Số 512 đường Nguyễn Xiển, Phường Long Thạnh Mỹ, Quận 9, TP. Hồ Chí Minh</span>
+                                <span>{contact.address}</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="w-5 h-5 text-teal-400 shrink-0" />
-                                <span>+84 (0) 96 389 38 93</span>
+                                <span>{contact.phone}</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="w-5 h-5 text-teal-400 shrink-0" />
-                                <span>dksky456@gmail.com</span>
+                                <span>{contact.email}</span>
                             </li>
                         </ul>
                     </div>
@@ -76,10 +80,10 @@ export default function Footer() {
                 </div>
 
                 <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-                    <p>© {new Date().getFullYear()} VibeBooth. All rights reserved.</p>
+                    <p>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
                     <div className="flex gap-6">
-                        <a href="#" className="hover:text-slate-300">Chính sách bảo mật</a>
-                        <a href="#" className="hover:text-slate-300">Điều khoản dịch vụ</a>
+                        <a href="#" className="hover:text-slate-300">{t('footer.privacy')}</a>
+                        <a href="#" className="hover:text-slate-300">{t('footer.terms')}</a>
                     </div>
                 </div>
             </div>

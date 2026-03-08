@@ -1,39 +1,17 @@
 import { motion } from 'framer-motion';
 import { ClipboardCheck, Ruler, CalendarClock, Handshake } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from 'react-i18next';
 
 const commitmentPoints = [
-    {
-        id: 1,
-        title: 'Khảo sát & Tư vấn chuyên sâu',
-        desc: 'Không chỉ bán thiết bị, chúng tôi tìm hiểu cặn kẽ không gian, tệp khách hàng mục tiêu của bạn để tư vấn concept phù hợp và tối ưu tỷ suất đầu tư ROI nhất.',
-        icon: <ClipboardCheck className="w-6 h-6 text-teal-600" />,
-        color: "bg-teal-50"
-    },
-    {
-        id: 2,
-        title: 'Bản đề án chi tiết & Demo 3D',
-        desc: 'Mọi họa tiết, vật liệu (sắt, gỗ, rèm), kích thước tổng thể đều được minh bạch trên bản vẽ kỹ thuật chi tiết trước khi chốt thi công, đảm bảo không có sai lệch.',
-        icon: <Ruler className="w-6 h-6 text-pink-600" />,
-        color: "bg-pink-50"
-    },
-    {
-        id: 3,
-        title: 'Tiến độ rõ ràng, Báo cáo liên tục',
-        desc: 'Bám sát kế hoạch thi công phần cứng và tinh chỉnh phần mềm. Cập nhật tiến độ hàng ngày/tuần để khách hàng luôn làm chủ được thời gian ra mắt.',
-        icon: <CalendarClock className="w-6 h-6 text-indigo-600" />,
-        color: "bg-indigo-50"
-    },
-    {
-        id: 4,
-        title: 'Đồng hành nghiệm thu & Vận hành',
-        desc: 'Bàn giao tận nơi, training trực tiếp cho nhân viên của bạn cách vận hành máy trơn tru, cách thay cuộn in và xử lý các sự cố cơ bản.',
-        icon: <Handshake className="w-6 h-6 text-amber-600" />,
-        color: "bg-amber-50"
-    }
+    { id: 1, icon: <ClipboardCheck className="w-6 h-6 text-teal-600" />, color: "bg-teal-50" },
+    { id: 2, icon: <Ruler className="w-6 h-6 text-pink-600" />, color: "bg-pink-50" },
+    { id: 3, icon: <CalendarClock className="w-6 h-6 text-indigo-600" />, color: "bg-indigo-50" },
+    { id: 4, icon: <Handshake className="w-6 h-6 text-amber-600" />, color: "bg-amber-50" }
 ];
 
 export default function Commitment() {
+    const { t } = useTranslation();
     return (
         <section className="py-24 bg-white relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -49,14 +27,14 @@ export default function Commitment() {
                             transition={{ duration: 0.6 }}
                         >
                             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight leading-tight">
-                                Tâm huyết & Trách nhiệm <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-500">Trên từng dự án</span>
+                                {t('commitment.title_part1')} <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-500">{t('commitment.title_highlight')}</span>
                             </h2>
                             <p className="text-lg text-slate-600 leading-relaxed mb-4">
-                                Khi tiếp nhận dự án, VibeBooth coi đó là một "đứa con tinh thần" thực thụ. Chúng tôi không giao cho bạn một đống linh kiện vô hồn, chúng tôi bàn giao một <strong>mỗ máy in tiền trơn tru</strong>.
+                                {t('commitment.p1')}
                             </p>
                             <p className="text-base text-slate-500 border-l-4 border-slate-200 pl-4 py-1 italic">
-                                "Từ những ý tưởng trên giấy đến bản vẽ kỹ thuật chi tiết, chúng tôi luôn có kế hoạch chuẩn xác và theo sát tiến độ công trình đến ngày khánh thành."
+                                {t('commitment.quote')}
                             </p>
                         </motion.div>
 
@@ -74,8 +52,8 @@ export default function Commitment() {
                                             <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${point.color}`}>
                                                 {point.icon}
                                             </div>
-                                            <h3 className="font-bold text-slate-800 text-lg">{point.title}</h3>
-                                            <p className="text-slate-600 text-sm leading-relaxed">{point.desc}</p>
+                                            <h3 className="font-bold text-slate-800 text-lg">{t(`commitment.points.${point.id - 1}.title`)}</h3>
+                                            <p className="text-slate-600 text-sm leading-relaxed">{t(`commitment.points.${point.id - 1}.desc`)}</p>
                                         </CardContent>
                                     </Card>
                                 </motion.div>
