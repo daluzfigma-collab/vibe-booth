@@ -1,55 +1,32 @@
 import { motion } from 'framer-motion';
 import { CheckCircle2, Store } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from 'react-i18next';
 
 const boothModels = [
     {
         id: 1,
-        title: 'Rustic Wooden Box',
-        desc: 'Thiết kế mộc mạc với chất liệu gỗ tự nhiên, rèm nâu ấm áp và bảng đen phấn trắng cổ điển.',
-        idealFor: ['Quán Pub, Bar', 'Cafe mộc', 'Rạp chiếu phim', 'Sảnh khách sạn'],
-        img: '/booths/booth-6.jpg',
-        badge: 'Mộc mạc'
+        img: '/booths/booth-6.jpg'
     },
     {
         id: 2,
-        title: 'Elegant White Minimal',
-        desc: 'Khối hộp tối giản với hệ rèm thanh lịch, tôn lên sự chuyên nghiệp và tinh khôi.',
-        idealFor: ['Sự kiện doanh nghiệp', 'Tiệc cưới', 'Fashion Shop'],
-        img: '/booths/booth-7.jpg',
-        badge: 'Sang trọng'
+        img: '/booths/booth-7.jpg'
     },
     {
         id: 3,
-        title: 'Retro Classic Black',
-        desc: 'Tone đen nhám kết hợp họa tiết typography vintage và rèm nhung đỏ, tạo chất hoài cổ sâu sắc.',
-        idealFor: ['Quán Pub, Bar', 'Nhà hàng Âu', 'Sự kiện Retro'],
-        img: '/booths/booth-8.jpg',
-        badge: 'Cá tính'
+        img: '/booths/booth-8.jpg'
     },
     {
         id: 4,
-        title: 'Red Line Compact',
-        desc: 'Thiết kế cực kỳ nhỏ gọn bo góc hiện đại, đi kèm viền đỏ nổi bật, hút mắt người qua lại.',
-        idealFor: ['Quán trà sữa', 'Cafe check in', 'Store mặt tiền'],
-        img: '/booths/booth-9.jpg',
-        badge: 'Hot Trend'
+        img: '/booths/booth-9.jpg'
     },
     {
         id: 5,
-        title: 'Coastal Retro Booth',
-        desc: 'Dạng tủ vuông vức ốp gỗ vân sáng, điểm xuyết họa tiết retro gợn sóng và rèm xanh navy.',
-        idealFor: ['Quán Cafe', 'Tiệm bánh ngọt', 'Mini Studio'],
-        img: '/booths/booth-10.jpg',
-        badge: 'Hot Trend'
+        img: '/booths/booth-10.jpg'
     },
     {
         id: 6,
-        title: 'Classic Arcade Booth',
-        desc: 'Tủ gỗ viền đen kết hợp bảng hiệu hộp đèn rực rỡ, mang đậm vibe bốt chụp ảnh thập niên 90.',
-        idealFor: ['Bia craft', 'Quán Pub', 'Tổ hợp giải trí'],
-        img: '/booths/booth-11.jpg',
-        badge: 'Cổ điển'
+        img: '/booths/booth-11.jpg'
     }
 ];
 
@@ -77,6 +54,7 @@ const itemVariants = {
 };
 
 export default function TrendingBooths() {
+    const { t } = useTranslation();
     return (
         <section className="relative py-24 overflow-hidden bg-slate-50/50">
             {/* Ambient Background Elements */}
@@ -97,13 +75,13 @@ export default function TrendingBooths() {
                     >
                         <div className="inline-flex items-center justify-center gap-2 px-4 py-2 mb-6 text-sm font-semibold bg-white border rounded-full shadow-sm border-slate-200 text-slate-700">
                             <Store className="w-4 h-4 text-teal-500" />
-                            <span>Thiết kế Module linh hoạt</span>
+                            <span>{t('trending.badge')}</span>
                         </div>
                         <h2 className="mb-6 text-4xl font-extrabold tracking-tight md:text-5xl text-slate-900">
-                            Mẫu Booth <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-emerald-500">Thịnh Hành</span>
+                            {t('trending.title', 'Trending Booths')}
                         </h2>
                         <p className="text-lg leading-relaxed text-slate-500">
-                            Chiêm ngưỡng các concept lắp đặt thực tế. VibeBooth hỗ trợ tùy biến thiết kế để cỗ máy hoàn toàn "ăn khớp" với không gian của bạn.
+                            {t('trending.desc')}
                         </p>
                     </motion.div>
                 </div>
@@ -125,13 +103,13 @@ export default function TrendingBooths() {
                                     {/* Glassmorphism Badge */}
                                     <div className="absolute z-20 top-4 right-4">
                                         <span className="px-3 py-1.5 text-xs font-bold tracking-wide text-slate-800 bg-white/85 backdrop-blur-md rounded-full shadow-sm">
-                                            {booth.badge}
+                                            {t(`trending.booths.${booth.id - 1}.badge`)}
                                         </span>
                                     </div>
 
                                     <img
                                         src={booth.img}
-                                        alt={booth.title}
+                                        alt={t(`trending.booths.${booth.id - 1}.title`, `Booth ${booth.id}`)}
                                         className="object-cover w-full h-full transition-transform duration-700 ease-out group-hover:scale-110"
                                         onError={(e) => {
                                             e.currentTarget.src = `https://placehold.co/600x800/f8fafc/94a3b8?text=Booth+${booth.id}`;
@@ -144,21 +122,21 @@ export default function TrendingBooths() {
 
                                 {/* Content Container */}
                                 <CardContent className="relative z-10 flex flex-col flex-1 p-6 bg-white">
-                                    <h3 className="mb-3 text-xl font-bold transition-colors duration-300 text-slate-900 group-hover:text-teal-600 line-clamp-1">
-                                        {booth.title}
+                                        <h3 className="mb-3 text-xl font-bold transition-colors duration-300 text-slate-900 group-hover:text-teal-600 line-clamp-1">
+                                        {t(`trending.booths.${booth.id - 1}.title`)}
                                     </h3>
                                     
                                     <p className="flex-1 mb-6 text-sm leading-relaxed text-slate-500 line-clamp-3">
-                                        {booth.desc}
+                                        {t(`trending.booths.${booth.id - 1}.desc`)}
                                     </p>
 
                                     {/* Modern Ideal For Tags */}
                                     <div className="pt-5 mt-auto border-t border-slate-100">
                                         <p className="flex items-center gap-1.5 mb-3 text-xs font-semibold tracking-wider text-slate-400 uppercase">
-                                            Gợi ý lắp đặt
+                                            {t('trending.ideal_for')}
                                         </p>
                                         <div className="flex flex-wrap gap-2">
-                                            {booth.idealFor.map((ideal, index) => (
+                                            {((t(`trending.booths.${booth.id - 1}.idealFor`, { returnObjects: true, defaultValue: [] }) as unknown as string[]) || []).map((ideal: string, index: number) => (
                                                 <span 
                                                     key={index} 
                                                     className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium transition-colors bg-slate-50 text-slate-600 rounded-lg group-hover:bg-teal-50 border border-slate-100 group-hover:border-teal-100 group-hover:text-teal-700"

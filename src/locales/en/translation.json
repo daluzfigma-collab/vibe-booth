@@ -20,5 +20,187 @@
         "vi": "Tiếng Việt",
         "en": "English",
         "zh": "中文"
-    }
+    },
+    "commitment": {
+        "title_part1": "Passion & Responsibility",
+        "title_highlight": "Across every project",
+        "p1": "When we take on a project, VibeBooth treats it as a true labor of love. We don't hand you a pile of lifeless parts - we deliver a smoothly running money-making machine.",
+        "quote": "From paper ideas to detailed technical drawings, we always plan precisely and follow the construction schedule up to the grand opening.",
+        "approved_tag": "Approved Design",
+        "points": [
+            { "title": "In-depth Survey & Consultation", "desc": "Not only selling hardware, we study your space and target customers to advise the most ROI-optimised concept." },
+            { "title": "Detailed Proposal & 3D Demo", "desc": "All patterns, materials and overall dimensions are transparent on detailed technical drawings before finalizing construction." },
+            { "title": "Clear Timeline & Continuous Reports", "desc": "We stick to hardware construction and software tuning plans. Daily/weekly updates keep you in control of the launch schedule." },
+            { "title": "Acceptance Support & Handover", "desc": "On-site handover and direct staff training on smooth machine operation, replacing print rolls and basic troubleshooting." }
+        ],
+        "image_alt": "Detailed technical drawing and 3D photobooth demo by VibeBooth"
+    },
+    "conceptGallery": {
+        "header_title": "Customize Every Space Concept",
+        "header_desc": "With modular block designs, VibeBooth easily adapts to your existing interior concept - from gentle Korea Style to edgy Cyberpunk.",
+        "concepts": [
+            { "title": "Eco-Green Booth", "desc": "Minimal aluminum frame combined with natural vines, turning the machine into a tasteful decor piece ideal for garden cafes or healing-style studios.", "badge": "Trending" },
+            { "title": "Urban Garden White", "desc": "Pure white design with olive-green drapes, creating an elegant focal point in bright, plant-filled spaces.", "badge": "Elegant" },
+            { "title": "Skyview Villa Booth", "desc": "Slim aluminum frame with luxurious red velvet curtains, perfect for panorama-view villas or premium lobbies.", "badge": "Events" }
+        ]
+    },
+    "coreFeatures": {
+        "title_part1": "The ",
+        "title_highlight": "VibeBooth Software",
+        "desc": "Continuously updated proprietary software that delivers superior AI power and an experience competitors can't copy.",
+        "features": [
+            { "title": "Full Automation", "desc": "From countdown to printing and QR/Email delivery - fully automated." },
+            { "title": "Customizable UI", "desc": "Supports UI customization per business needs (one free update/change in the first year)." },
+            { "title": "Advanced Video FX", "desc": "Auto add slow motion, fast motion, and reverse for compelling videos." },
+            { "title": "Flexible Layout Design", "desc": "Combine 1, 2, or 4 layouts into print formats with one-touch Template Editor." },
+            { "title": "Digital Green Screen", "desc": "AI auto-background removal for seamless travel or ocean backdrops at the Booth." },
+            { "title": "Multimedia Support", "desc": "Photo, GIF, Boomerang and short videos with built-in premium filters." },
+            { "title": "Auto QR Payment", "desc": "Displays QR codes for online payment or quick cash collection." },
+            { "title": "Signature Drawing", "desc": "Customers can sign or draw on the touchscreen to personalize photos." },
+            { "title": "Flexible Feature Support", "desc": "Feel free to implement any creative features or mechanics you come up with." }
+        ]
+    },
+    "footer": {
+        "brand_tagline": "You need the vibe. We'll make it reality.",
+        "brand_description": "VibeBooth specializes in building intelligent Photobooth systems and provides optimal space solutions for all business models.",
+        "quick_links_title": "Quick Links",
+        "quick_links": ["About Us", "Software Features", "Chain Solutions", "Investment Pricing"],
+        "solutions_title": "Solutions",
+        "contact_title": "Contact",
+        "solutions": ["Photobooth for Cafes", "Event Photobooth", "Dedicated Shop Setup", "Brand Franchising"],
+        "contact": {
+            "address": "No.512 Nguyen Xien, Long Thanh My, District 9, Ho Chi Minh City",
+            "phone": "+84 (0) 96 389 38 93",
+            "email": "dksky456@gmail.com"
+        },
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "copyright": "© {{year}} VibeBooth. All rights reserved."
+    },
+    "pricing": {
+        "badge": "Investment Pricing",
+        "title": "One-time investment, long-term returns",
+        "desc": "Choose the plan that fits your business scale. We make all costs transparent so you can calculate ROI easily.",
+        "hardware_label": "Hardware",
+        "software_label": "Software (Monthly)",
+        "plans": [
+            {
+                "name": "Startup",
+                "theme": "Vibe Essentials",
+                "hardware": "$2,000 USD",
+                "software": "$35/month USD",
+                "description": "For individuals wanting to try the model at small cafes/studios.",
+                "features": ["Use basic filter presets", "High-speed QR sharing system", "Auto online payment via QR", "Remote technical support & bug fixes"],
+                "highlight": false,
+                "color": "from-slate-100 to-slate-50"
+            },
+            {
+                "name": "Professional",
+                "theme": "Pro AI Vibe",
+                "hardware": "$2,500 USD",
+                "software": "$70/month USD",
+                "description": "Best seller. For dedicated shops needing absolute AI differentiation.",
+                "features": ["Full AI features: Cartoonify, AI Retouch", "Create custom color filters by brand vibe", "Flexible custom frame design", "Phone-based management dashboard", "Latest AI trending feature updates"],
+                "highlight": true,
+                "color": "from-teal-100 via-emerald-50 to-cyan-100"
+            },
+            {
+                "name": "Ecosystem",
+                "theme": "Enterprise",
+                "hardware": "Contact us",
+                "software": "$140/month USD",
+                "description": "For investors wanting to lead chains or franchise operations.",
+                "features": ["White Label: Remove VibeBooth, show your own brand", "Multi-branch management access", "Complex integrated payment systems", "Monthly on-site maintenance"],
+                "highlight": false,
+                "color": "from-pink-100 to-rose-50"
+            },
+            {
+                "name": "360° Service",
+                "theme": "Turnkey Solution",
+                "hardware": "Custom",
+                "software": "Turnkey",
+                "description": "Complete turnkey A-Z handover. Total shop setup ~$1,200-2,500 USD.",
+                "features": ["Concept design & 3D ($170-340)", "Construction & decor ($500-1,350)", "Furniture & shelving ($240-500)", "Thematic props & accessories combo", "Operations training (Free from 2 machines)"],
+                "highlight": false,
+                "color": "from-amber-100 to-yellow-50"
+            }
+        ],
+        "best_seller": "Best seller",
+        "button_text": "Get consultation for this plan",
+        "why_title": "Why VibeBooth pricing gives you confidence?",
+        "why_desc": "We prioritize quality and help you dominate the market with technologies that create sustainable value.",
+        "why": [
+            { "title": "Own the Core Tech", "desc": "We don't resell third-party software. All code is optimized by international IT experts." },
+            { "title": "AI Personalization", "desc": "Transform characters, customize presets at the Booth - features cheap machines can't do." },
+            { "title": "Hands-on Support", "desc": "Our installation team turns an empty space into a profitable business." }
+        ]
+    },
+    "solutions": {
+        "title": "VibeBooth Solutions",
+        "desc": "More than selling hardware - we provide an automated Photobooth business ecosystem from A to Z.",
+        "space_badge": "01. For Starters",
+        "space_title": "Space & Experience",
+        "space_desc": "We consult layout concepts to attract GenZ from the moment they arrive.",
+        "ops_badge": "02. Easy Management",
+        "ops_title": "Operations & Payments",
+        "ops_desc": "Manage your Photobooth chain from your phone - perfect for non-technical owners.",
+        "roadmap_title": "VibeBooth Startup Roadmap",
+        "roadmap_desc": "A 5-step process that helps you open within 14-30 days.",
+        "roadmap_steps": ["Site consultation", "Space design", "Equipment installation", "Software setup", "Grand opening"]
+    },
+    "trending": {
+        "badge": "Flexible Module Designs",
+        "title": "Trending Booth Models",
+        "desc": "Explore real installation concepts. VibeBooth supports customizing design to perfectly fit your space.",
+        "ideal_for": "Ideal for",
+        "booths": [
+            {
+                "title": "Rustic Wooden Box",
+                "desc": "Rustic design with natural wood material, warm brown curtains and classic chalk blackboard aesthetic.",
+                "badge": "Rustic",
+                "idealFor": ["Pubs & Bars", "Rustic Cafes", "Cinemas", "Hotel Lounges"]
+            },
+            {
+                "title": "Elegant White Minimal",
+                "desc": "Minimalist box design with refined curtains, emphasizing professionalism and elegance.",
+                "badge": "Sophisticated",
+                "idealFor": ["Corporate Events", "Weddings", "Fashion Shops"]
+            },
+            {
+                "title": "Retro Classic Black",
+                "desc": "Matte black tone with vintage typography patterns and red velvet curtains, creating deep nostalgic charm.",
+                "badge": "Personality",
+                "idealFor": ["Pubs & Bars", "European Restaurants", "Retro Events"]
+            },
+            {
+                "title": "Red Line Compact",
+                "desc": "Ultra-compact rounded modern design with striking red border, eye-catching for passersby.",
+                "badge": "Hot Trend",
+                "idealFor": ["Bubble Tea Shops", "Instagrammable Cafes", "Storefront Locations"]
+            },
+            {
+                "title": "Coastal Retro Booth",
+                "desc": "Square cabinet with light wood veneer, accented with retro wave patterns and navy curtains.",
+                "badge": "Hot Trend",
+                "idealFor": ["Coffee Shops", "Bakeries", "Mini Studios"]
+            },
+            {
+                "title": "Classic Arcade Booth",
+                "desc": "Black-framed wooden cabinet combined with bright light-box signage, carrying strong 90s arcade vibes.",
+                "badge": "Classic",
+                "idealFor": ["Craft Beer Bars", "Pubs", "Entertainment Complexes"]
+            }
+        ]
+    },
+    "promoPopup": {
+    "title": "Grand Opening Promotion",
+    "subtitle": "Limited Time Only",
+    "plan_6months": "6-Month Startup Package",
+    "plan_6months_price": "From 3.5M / Machine",
+    "plan_12months": "12-Month Package",
+    "plan_12months_price": "From 5M / Machine",
+    "description": "Launch your AI Photobooth business with our special introductory pricing",
+    "cta": "Get a Quote",
+    "close": "Close"
+}
 }

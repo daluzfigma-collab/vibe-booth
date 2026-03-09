@@ -50,14 +50,17 @@ const opFeatures = [
 ];
 
 const roadmapSteps = [
-    { step: 1, title: "Tư vấn mặt bằng", icon: <MapPin className="w-4 h-4" /> },
-    { step: 2, title: "Thiết kế không gian", icon: <Paintbrush className="w-4 h-4" /> },
-    { step: 3, title: "Lắp đặt thiết bị", icon: <Wrench className="w-4 h-4" /> },
-    { step: 4, title: "Cấu hình phần mềm", icon: <Settings className="w-4 h-4" /> },
-    { step: 5, title: "Khai trương", icon: <PartyPopper className="w-4 h-4" /> },
+    { step: 1, key: 'solutions.roadmap_steps.0', icon: <MapPin className="w-4 h-4" /> },
+    { step: 2, key: 'solutions.roadmap_steps.1', icon: <Paintbrush className="w-4 h-4" /> },
+    { step: 3, key: 'solutions.roadmap_steps.2', icon: <Wrench className="w-4 h-4" /> },
+    { step: 4, key: 'solutions.roadmap_steps.3', icon: <Settings className="w-4 h-4" /> },
+    { step: 5, key: 'solutions.roadmap_steps.4', icon: <PartyPopper className="w-4 h-4" /> },
 ];
 
+import { useTranslation } from 'react-i18next';
+
 export default function Solutions() {
+    const { t } = useTranslation();
     return (
         <section id="solutions" className="py-24 bg-slate-50 relative overflow-hidden">
             {/* Background decorations */}
@@ -69,10 +72,10 @@ export default function Solutions() {
                 {/* Header */}
                 <div className="text-center max-w-2xl mx-auto mb-20">
                     <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-                        Giải pháp VibeBooth
+                        {t('solutions.title')}
                     </h2>
                     <p className="text-lg text-slate-600">
-                        Không chỉ bán thiết bị, chúng tôi cung cấp hệ sinh thái kinh doanh Photobooth tự động hóa toàn diện từ A-Z.
+                        {t('solutions.desc')}
                     </p>
                 </div>
 
@@ -87,13 +90,13 @@ export default function Solutions() {
                     >
                         <div>
                             <div className="inline-block px-3 py-1 rounded-full bg-teal-100 text-teal-700 font-semibold text-sm mb-4">
-                                01. Dành cho Người Mới
+                                {t('solutions.space_badge')}
                             </div>
                             <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-                                Không gian & Trải nghiệm
+                                {t('solutions.space_title')}
                             </h3>
                             <p className="text-slate-600 leading-relaxed">
-                                Đánh bay nỗi lo "không biết bắt đầu từ đâu". Chúng tôi tư vấn concept layout để thu hút GenZ ngay từ vòng gửi xe.
+                                {t('solutions.space_desc')}
                             </p>
                         </div>
 
@@ -121,13 +124,13 @@ export default function Solutions() {
                     >
                         <div>
                             <div className="inline-block px-3 py-1 rounded-full bg-pink-100 text-pink-700 font-semibold text-sm mb-4">
-                                02. Quản lý Thảnh Thơi
+                                {t('solutions.ops_badge')}
                             </div>
                             <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-                                Vận hành & Thanh toán
+                                {t('solutions.ops_title')}
                             </h3>
                             <p className="text-slate-600 leading-relaxed">
-                                Quản lý chuỗi Photobooth ngay trên chiếc điện thoại của bạn. Giải tỏa nỗi lo cho người không rành công nghệ.
+                                {t('solutions.ops_desc')}
                             </p>
                         </div>
 
@@ -157,11 +160,11 @@ export default function Solutions() {
                     <div className="absolute inset-0 bg-gradient-vibe opacity-5 mix-blend-multiply"></div>
 
                     <div className="text-center mb-12 relative z-10">
-                        <h3 className="text-2xl font-bold text-slate-900 mb-3">Lộ trình Startup VibeBooth</h3>
-                        <p className="text-slate-500">Quy trình 5 bước chuẩn mực giúp bạn khai trương chỉ trong 14-30 ngày.</p>
+                        <h3 className="text-2xl font-bold text-slate-900 mb-3">{t('solutions.roadmap_title')}</h3>
+                        <p className="text-slate-500">{t('solutions.roadmap_desc')}</p>
                     </div>
 
-                    <div className="relative z-10 flex flex-col md:flex-row justify-between items-center md:items-start gap-8 md:gap-4 relative">
+                    <div className="relative z-10 flex flex-col md:flex-row justify-between items-center md:items-start gap-8 md:gap-4">
                         {/* Connecting line for desktop */}
                         <div className="hidden md:block absolute top-[28px] left-[10%] right-[10%] h-[2px] bg-slate-100 -z-10"></div>
 
@@ -170,8 +173,8 @@ export default function Solutions() {
                                 <div className="w-14 h-14 rounded-full bg-white border-4 border-slate-100 flex items-center justify-center text-slate-400 font-bold mb-4 shadow-sm group-hover:border-teal-400 group-hover:text-teal-500 transition-colors z-10">
                                     {step.icon}
                                 </div>
-                                <div className="bg-slate-50 px-3 py-1 rounded-full text-xs font-bold text-slate-400 mb-2">BƯỚC {step.step}</div>
-                                <h4 className="font-semibold text-slate-800 text-sm md:text-base">{step.title}</h4>
+                                <div className="bg-slate-50 px-3 py-1 rounded-full text-xs font-bold text-slate-400 mb-2">{t('solutions.roadmap_step_prefix', 'STEP')} {step.step}</div>
+                                <h4 className="font-semibold text-slate-800 text-sm md:text-base">{t(step.key)}</h4>
                             </div>
                         ))}
                     </div>
