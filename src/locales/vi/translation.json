@@ -203,13 +203,13 @@
         ]
     },
     "promoPopup": {
-        "title": "Khuyến Mãi Khai Trương",
+        "title": "Khuyến Mãi Khai Trương Phần Mềm",
         "subtitle": "Thời Gian Giới Hạn",
         "plan_6months": "Gói Khởi Nghiệp 6 Tháng",
         "plan_6months_price": "Chỉ từ 3.5 Tr / Máy",
         "plan_12months": "Gói 12 Tháng",
         "plan_12months_price": "Chỉ từ 5 Tr / Máy",
-        "description": "Khởi động kinh doanh Photobooth AI của bạn với giá ưu đãi đặc biệt",
+        "description": "Khởi động kinh doanh cùng VibePhotobooth của bạn với giá ưu đãi đặc biệt",
         "cta": "Nhận Báo Giá",
         "close": "Đóng"
     }
