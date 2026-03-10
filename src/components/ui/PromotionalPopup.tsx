@@ -5,15 +5,10 @@ import { useTranslation } from 'react-i18next';
 
 export default function PromotionalPopup() {
     const [isOpen, setIsOpen] = useState(false);
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     useEffect(() => {
-        // Show popup after 2 seconds on every page load
-        const timer = setTimeout(() => {
-            setIsOpen(true);
-        }, 2000);
-
-        return () => clearTimeout(timer);
+        setIsOpen(true);
     }, []);
 
     const handleClose = () => {
@@ -21,13 +16,15 @@ export default function PromotionalPopup() {
     };
 
     const handleContact = () => {
-        // Scroll to pricing section
         const pricingSection = document.getElementById('pricing');
         if (pricingSection) {
             pricingSection.scrollIntoView({ behavior: 'smooth' });
         }
         handleClose();
     };
+
+    // Kiểm tra xem có phải bản dịch dài không (Anh, Trung thường dài hơn Việt ở đơn vị)
+    const isEnglish = i18n.language === 'en';
 
     return (
         <AnimatePresence>
@@ -42,18 +39,18 @@ export default function PromotionalPopup() {
                         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
                     />
 
-                    {/* Popup */}
+                    {/* Popup - Tăng hẳn lên max-w-3xl để cực kỳ rộng rãi cho bản tiếng Anh */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 20 }}
                         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                        className="relative max-w-lg w-full bg-white rounded-3xl shadow-2xl overflow-hidden"
+                        className="relative w-full max-w-3xl overflow-hidden bg-white shadow-2xl rounded-3xl"
                     >
                         {/* Close Button */}
                         <button
                             onClick={handleClose}
-                            className="absolute top-4 right-4 z-10 p-2 hover:bg-slate-100 rounded-full transition-colors"
+                            className="absolute z-10 p-2 transition-colors rounded-full top-4 right-4 hover:bg-slate-100"
                         >
                             <X className="w-6 h-6 text-slate-600" />
                         </button>
@@ -67,10 +64,10 @@ export default function PromotionalPopup() {
                             <motion.div
                                 initial={{ y: -10, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.2 }}
+                                transition={{ delay: 0.1 }}
                                 className="inline-block mb-4"
                             >
-                                <span className="px-4 py-2 bg-gradient-to-r from-teal-500 to-cyan-500 text-white text-sm font-bold rounded-full">
+                                <span className="px-4 py-2 text-sm font-bold text-white rounded-full bg-gradient-to-r from-teal-500 to-cyan-500">
                                     {t('promoPopup.subtitle')}
                                 </span>
                             </motion.div>
@@ -79,18 +76,18 @@ export default function PromotionalPopup() {
                             <motion.h2
                                 initial={{ y: -10, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.3 }}
-                                className="text-3xl md:text-4xl font-bold text-slate-900 mb-2"
+                                transition={{ delay: 0.2 }}
+                                className="mb-2 text-3xl font-bold leading-tight md:text-4xl text-slate-900"
                             >
-                                {t('promoPopup.title')}
+                                {t('promoPopup.title', 'Khuyến Mãi Khai Trương Phần Mềm')}
                             </motion.h2>
 
                             {/* Description */}
                             <motion.p
                                 initial={{ y: -10, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.4 }}
-                                className="text-slate-600 mb-8"
+                                transition={{ delay: 0.3 }}
+                                className="mb-8 text-slate-600"
                             >
                                 {t('promoPopup.description')}
                             </motion.p>
@@ -99,28 +96,34 @@ export default function PromotionalPopup() {
                             <motion.div
                                 initial={{ y: -10, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.5 }}
-                                className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8"
+                                transition={{ delay: 0.4 }}
+                                // Chuyển sang grid-cols-1 trên điện thoại và nới rộng khoảng cách
+                                className="grid grid-cols-1 gap-4 mb-8 md:grid-cols-2 lg:gap-8"
                             >
                                 {/* 6 Month Plan */}
-                                <div className="p-4 rounded-2xl bg-gradient-to-br from-teal-50 to-cyan-50 border border-teal-200 hover:border-teal-400 transition-colors">
-                                    <h3 className="font-bold text-slate-900 mb-2 text-sm md:text-base">
+                                <div className="flex flex-col justify-center p-5 transition-colors border border-teal-200 rounded-2xl bg-gradient-to-br from-teal-50 to-cyan-50 hover:border-teal-400">
+                                    <h3 className="mb-2 text-sm font-bold text-slate-900">
                                         {t('promoPopup.plan_6months')}
                                     </h3>
-                                    <p className="text-xl md:text-2xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
+                                    {/* Giảm size chữ bản Anh (text-lg) và bỏ whitespace-nowrap để nếu cực dài nó tự xuống dòng đẹp thay vì mất chữ */}
+                                    <p className={`font-bold text-transparent bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text ${
+                                        isEnglish ? 'text-lg md:text-xl' : 'text-xl md:text-2xl'
+                                    }`}>
                                         {t('promoPopup.plan_6months_price')}
                                     </p>
                                 </div>
 
                                 {/* 12 Month Plan */}
-                                <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 hover:border-blue-400 transition-colors relative">
-                                    <div className="absolute -top-3 -right-3 px-3 py-1 bg-orange-500 text-white text-xs font-bold rounded-full">
+                                <div className="relative flex flex-col justify-center p-5 transition-colors border border-blue-200 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 hover:border-blue-400">
+                                    <div className="absolute px-3 py-1 text-xs font-bold text-white bg-orange-500 rounded-full shadow-md -top-3 -right-3">
                                         HOT
                                     </div>
-                                    <h3 className="font-bold text-slate-900 mb-2 text-sm md:text-base">
+                                    <h3 className="mb-2 text-sm font-bold text-slate-900">
                                         {t('promoPopup.plan_12months')}
                                     </h3>
-                                    <p className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                                    <p className={`font-bold text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text ${
+                                        isEnglish ? 'text-lg md:text-xl' : 'text-xl md:text-2xl'
+                                    }`}>
                                         {t('promoPopup.plan_12months_price')}
                                     </p>
                                 </div>
@@ -128,13 +131,13 @@ export default function PromotionalPopup() {
 
                             {/* CTA Button */}
                             <motion.button
-                                initial={{ y: -10, opacity: 0 }}
+                                initial={{ y: 10, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.6 }}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
+                                transition={{ delay: 0.5 }}
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
                                 onClick={handleContact}
-                                className="w-full py-3 px-6 bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-bold rounded-xl hover:shadow-lg transition-shadow"
+                                className="w-full px-6 py-4 font-bold text-white transition-all bg-gradient-to-r from-teal-500 to-cyan-500 rounded-xl hover:shadow-lg shadow-teal-500/20"
                             >
                                 {t('promoPopup.cta')}
                             </motion.button>
