@@ -9,7 +9,6 @@ import {
     QrCode,
     Sparkles,
     Paintbrush,
-    
 } from 'lucide-react';
 
 const features = [
@@ -88,12 +87,13 @@ const containerVariants = {
     },
 };
 
+// TỐI ƯU: Chuyển spring sang tween
 const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
         opacity: 1,
         y: 0,
-        transition: { type: "spring" as const, stiffness: 100 }
+        transition: { type: "tween", ease: "easeOut", duration: 0.4 }
     },
 };
 
@@ -131,6 +131,7 @@ export default function CoreFeatures() {
                         <motion.div
                             key={feature.title}
                             variants={itemVariants}
+                            style={{ willChange: "transform, opacity" }} // TỐI ƯU
                             className={`p-6 rounded-3xl border ${feature.border} ${feature.color} backdrop-blur-sm transition-all hover:scale-105 hover:shadow-xl hover:shadow-slate-200/50 flex flex-col gap-4 group cursor-pointer`}
                         >
                             <div className="flex items-center justify-center w-12 h-12 transition-transform bg-white shadow-sm rounded-2xl group-hover:scale-110">

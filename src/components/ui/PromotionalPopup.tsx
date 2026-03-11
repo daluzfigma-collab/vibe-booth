@@ -8,7 +8,11 @@ export default function PromotionalPopup() {
     const { t, i18n } = useTranslation();
 
     useEffect(() => {
-        setIsOpen(true);
+        // TỐI ƯU: Trì hoãn 3.5 giây để trang chính load xong animation
+        const timer = setTimeout(() => {
+            setIsOpen(true);
+        }, 3500);
+        return () => clearTimeout(timer);
     }, []);
 
     const handleClose = () => {
@@ -23,14 +27,12 @@ export default function PromotionalPopup() {
         handleClose();
     };
 
-    // Kiểm tra xem có phải bản dịch dài không (Anh, Trung thường dài hơn Việt ở đơn vị)
     const isEnglish = i18n.language === 'en';
 
     return (
         <AnimatePresence>
             {isOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-                    {/* Backdrop */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -39,15 +41,14 @@ export default function PromotionalPopup() {
                         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
                     />
 
-                    {/* Popup - Tăng hẳn lên max-w-3xl để cực kỳ rộng rãi cho bản tiếng Anh */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                        initial={{ opacity: 0, scale: 0.95, y: 10 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
-                        exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                        exit={{ opacity: 0, scale: 0.95, y: 10 }}
+                        transition={{ type: 'tween', ease: 'easeOut', duration: 0.3 }}
+                        style={{ willChange: 'transform, opacity' }} // TỐI ƯU
                         className="relative w-full max-w-3xl overflow-hidden bg-white shadow-2xl rounded-3xl"
                     >
-                        {/* Close Button */}
                         <button
                             onClick={handleClose}
                             className="absolute z-10 p-2 transition-colors rounded-full top-4 right-4 hover:bg-slate-100"
@@ -55,12 +56,9 @@ export default function PromotionalPopup() {
                             <X className="w-6 h-6 text-slate-600" />
                         </button>
 
-                        {/* Gradient Background */}
                         <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 via-cyan-500/10 to-blue-500/10" />
 
-                        {/* Content */}
                         <div className="relative p-8 md:p-12">
-                            {/* Badge */}
                             <motion.div
                                 initial={{ y: -10, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
@@ -72,7 +70,6 @@ export default function PromotionalPopup() {
                                 </span>
                             </motion.div>
 
-                            {/* Title */}
                             <motion.h2
                                 initial={{ y: -10, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
@@ -82,7 +79,6 @@ export default function PromotionalPopup() {
                                 {t('promoPopup.title', 'Khuyến Mãi Khai Trương Phần Mềm')}
                             </motion.h2>
 
-                            {/* Description */}
                             <motion.p
                                 initial={{ y: -10, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
@@ -92,20 +88,16 @@ export default function PromotionalPopup() {
                                 {t('promoPopup.description')}
                             </motion.p>
 
-                            {/* Pricing Cards */}
                             <motion.div
                                 initial={{ y: -10, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.4 }}
-                                // Chuyển sang grid-cols-1 trên điện thoại và nới rộng khoảng cách
                                 className="grid grid-cols-1 gap-4 mb-8 md:grid-cols-2 lg:gap-8"
                             >
-                                {/* 6 Month Plan */}
                                 <div className="flex flex-col justify-center p-5 transition-colors border border-teal-200 rounded-2xl bg-gradient-to-br from-teal-50 to-cyan-50 hover:border-teal-400">
                                     <h3 className="mb-2 text-sm font-bold text-slate-900">
                                         {t('promoPopup.plan_6months')}
                                     </h3>
-                                    {/* Giảm size chữ bản Anh (text-lg) và bỏ whitespace-nowrap để nếu cực dài nó tự xuống dòng đẹp thay vì mất chữ */}
                                     <p className={`font-bold text-transparent bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text ${
                                         isEnglish ? 'text-lg md:text-xl' : 'text-xl md:text-2xl'
                                     }`}>
@@ -113,7 +105,6 @@ export default function PromotionalPopup() {
                                     </p>
                                 </div>
 
-                                {/* 12 Month Plan */}
                                 <div className="relative flex flex-col justify-center p-5 transition-colors border border-blue-200 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 hover:border-blue-400">
                                     <div className="absolute px-3 py-1 text-xs font-bold text-white bg-orange-500 rounded-full shadow-md -top-3 -right-3">
                                         HOT
@@ -129,7 +120,6 @@ export default function PromotionalPopup() {
                                 </div>
                             </motion.div>
 
-                            {/* CTA Button */}
                             <motion.button
                                 initial={{ y: 10, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}

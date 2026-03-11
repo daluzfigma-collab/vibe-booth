@@ -13,10 +13,10 @@ export default function ConceptGallery() {
     const { t } = useTranslation();
     return (
         <section className="relative py-24 overflow-hidden bg-slate-50/50">
-            {/* Ambient Background Blobs */}
+            {/* TỐI ƯU: Giảm blur trên thiết bị di động */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-pink-200/20 blur-[100px]"></div>
-                <div className="absolute bottom-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full bg-rose-200/20 blur-[120px]"></div>
+                <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-pink-200/20 blur-[60px] md:blur-[100px]"></div>
+                <div className="absolute bottom-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full bg-rose-200/20 blur-[80px] md:blur-[120px]"></div>
             </div>
 
             <div className="container relative z-10 px-4 mx-auto md:px-6 max-w-7xl">
@@ -48,18 +48,21 @@ export default function ConceptGallery() {
                         hidden: { opacity: 0 },
                         show: {
                             opacity: 1,
-                            transition: {
-                                staggerChildren: 0.15
-                            }
+                            transition: { staggerChildren: 0.15 }
                         }
                     }}
                 >
                     {concepts.map((concept) => (
                         <motion.div
                             key={concept.id}
+                            style={{ willChange: "transform, opacity" }} // TỐI ƯU: Tăng tốc render
                             variants={{
                                 hidden: { opacity: 0, y: 30 },
-                                show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 80, damping: 15 } }
+                                show: { 
+                                    opacity: 1, 
+                                    y: 0, 
+                                    transition: { type: "tween", ease: "easeOut", duration: 0.4 } // TỐI ƯU: Bỏ spring
+                                }
                             }}
                             className="flex h-full"
                         >
@@ -67,31 +70,30 @@ export default function ConceptGallery() {
 
                                 {/* Image Container */}
                                 <div className="relative overflow-hidden aspect-[4/5] bg-slate-100">
-                                    {/* Glassmorphism Badge */}
                                     <div className="absolute z-20 top-4 right-4">
                                         <span className="px-3 py-1.5 text-xs font-bold tracking-wide text-slate-800 bg-white/85 backdrop-blur-md rounded-full shadow-sm">
                                             {t(`conceptGallery.concepts.${concept.id - 1}.badge`)}
                                         </span>
                                     </div>
 
-                                    {/* Image with zoom effect */}
+                                    {/* TỐI ƯU: Thêm lazy load và async decoding */}
                                     <img
                                         src={concept.img}
                                         alt={t(`conceptGallery.concepts.${concept.id - 1}.title`)}
+                                        loading="lazy"
+                                        decoding="async"
                                         className="object-cover w-full h-full transition-transform duration-700 ease-out group-hover:scale-110"
                                         onError={(e) => {
                                             e.currentTarget.src = `https://placehold.co/600x800/f8fafc/94a3b8?text=Concept+${concept.id}`;
                                         }}
                                     />
 
-                                    {/* Cinematic Play Button Overlay */}
                                     <div className="absolute inset-0 z-10 flex items-center justify-center transition-all duration-500 opacity-0 bg-slate-900/40 group-hover:opacity-100">
                                         <div className="flex items-center justify-center w-16 h-16 transition-all duration-500 transform scale-50 rounded-full shadow-2xl bg-white/20 backdrop-blur-md group-hover:scale-100 hover:bg-white/30">
                                             <Play className="ml-1 text-white w-7 h-7 drop-shadow-md" fill="currentColor" />
                                         </div>
                                     </div>
 
-                                    {/* Smooth bottom gradient for text contrast */}
                                     <div className="absolute inset-0 transition-opacity duration-500 opacity-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent group-hover:opacity-100"></div>
                                 </div>
 
