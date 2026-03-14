@@ -135,95 +135,80 @@
             "email": "dksky456@gmail.com"
         },
         "privacy": "隐私政策",
-        "terms": "服务条款",
+        "条款": "服务条款",
         "copyright": "© {{year}} VibeBooth。保留所有权利。"
     },
     "pricing": {
-        "badge": "投资定价",
-        "title": "一次性投资，长期回报",
-        "desc": "选择适合您业务规模的方案。我们透明所有成本，方便您计算投资回报。",
-        "hardware_label": "硬件",
-        "software_label": "软件（月度）",
+        "badge": "软件价格",
+        "title": "选择合适的系统套餐",
+        "title_prefix": "投资",
+        "desc": "灵活的照相亭软件解决方案，旨在满足您的确切需求，从基本操作到独家品牌识别系统。",
+        "hardware_label": "套餐费用",
+        "software_label": "软件",
         "plans": [
             {
-                "name": "初创版",
-                "theme": "Vibe 基础版",
-                "hardware": "60,000,000 VNĐ",
-                "software": "1,000,000 VNĐ/月",
-                "description": "适合想要在小咖啡馆/工作室尝试该模式的个人。",
+                "name": "Classic 套餐",
+                "theme": "快捷且经济",
+                "hardware": "20,000,000 VNĐ",
+                "software": "Turnkey",
+                "description": "适合需要快速设置、少量修改的客户。包含标准版照相亭应用程序和基础安装。",
                 "features": [
-                    "使用基本滤镜预设",
-                    "高速 QR 分享系统",
-                    "QR 自动在线支付",
-                    "远程技术支持和错误修复"
+                    "根据标志/品牌名称更改启动屏幕",
+                    "更改背景和相框",
+                    "导出照片（打印或发送文件）",
+                    "注意：保留原始布局、流程，不增加新功能"
                 ],
                 "highlight": false,
                 "color": "from-slate-100 to-slate-50"
             },
             {
-                "name": "专业版",
-                "theme": "Pro AI Vibe",
-                "hardware": "75,000,000 VNĐ",
-                "software": "2,000,000 VNĐ/月",
-                "description": "畅销版。适合需要绝对 AI 差异化的专业店铺。",
+                "name": "Design 套餐",
+                "theme": "专属界面",
+                "hardware": "40,000,000 VNĐ",
+                "software": "Turnkey",
+                "description": "适合想要独特界面的品牌/活动。继承 Classic 套餐的所有功能。",
                 "features": [
-                    "完整 AI 功能：漫画风、AI 修肤",
-                    "按品牌 vibe 创建自定义颜色滤镜",
-                    "灵活的自定义相框设计",
-                    "手机管理仪表板",
-                    "最新 AI 趋势功能更新"
+                    "根据需求设计 UI（待机、倒计时、预览屏幕）",
+                    "定制照相亭布局",
+                    "同步品牌视觉主题",
+                    "注意：使用原始逻辑，不开发重大新功能"
                 ],
                 "highlight": true,
                 "color": "from-teal-100 via-emerald-50 to-cyan-100"
             },
             {
-                "name": "生态系",
-                "theme": "企业版",
-                "hardware": "联系我们",
-                "software": "4,000,000 VNĐ/月",
-                "description": "适合想要领导连锁或特许经营业务的投资者。",
+                "name": "Limit 套餐",
+                "theme": "全面系统",
+                "hardware": "50,000,000 VNĐ",
+                "software": "Turnkey",
+                "description": "适合需要构建专属系统的企业客户。继承 Design 套餐的所有特权。",
                 "features": [
-                    "白标：删除 VibeBooth，显示您自己的品牌",
-                    "多分支管理访问",
-                    "复杂的集成支付系统",
-                    "月度现场维护"
+                    "全面定制：拍摄模式、滤镜、Boomerang/GIF",
+                    "集成 QR 下载和直接分享到社交网络",
+                    "独立的照片数据库存储",
+                    "完全定制的拍摄流程",
+                    "灵活的 API 集成 / 第三方系统连接"
                 ],
                 "highlight": false,
                 "color": "from-pink-100 to-rose-50"
-            },
-            {
-                "name": "360° 服务",
-                "theme": "完整解决方案",
-                "hardware": "定制",
-                "software": "完整交付",
-                "description": "完全钥匙交付 A-Z。总店铺设置 ~35M - 75M VNĐ。",
-                "features": [
-                    "概念设计与 3D（5M-10M VNĐ）",
-                    "施工与装修（15M-40M VNĐ）",
-                    "家具与储物架（7M-15M VNĐ）",
-                    "主题配件和装饰品组合",
-                    "运营培训（购买 2 台机器以上免费）"
-                ],
-                "highlight": false,
-                "color": "from-amber-100 to-yellow-50"
             }
         ],
-        "best_seller": "最畅销",
+        "best_seller": "最受欢迎",
         "button_text": "申请该方案咨询",
-        "why_title": "为什么 VibeBooth 的价格让您安心？",
-        "why_desc": "我们以质量为核心，帮助您用创造可持续价值的技术主导市场。",
+        "why_title": "为什么我们的解决方案与众不同？",
+        "why_desc": "我们不仅提供软件，还提供稳定运行的生态系统和无限的定制能力。",
         "why": [
             {
                 "title": "掌握核心技术",
-                "desc": "不使用第三方成品软件。所有代码由国际 IT 专家优化。"
+                "desc": "不使用转售软件。所有代码均针对您的系统进行独立优化。"
             },
             {
-                "title": "AI 个性化",
-                "desc": "在亭内即可改变角色、定制预设——廉价设备做不到的功能。"
+                "title": "无限定制",
+                "desc": "从改变拍摄流程到集成外部API，满足所有严格要求。"
             },
             {
-                "title": "落地支持",
-                "desc": "我们的施工团队将空置空间转变为盈利场所。"
+                "title": "深度支持",
+                "desc": "工程师团队从界面构思到活动/店铺顺利运营全程陪伴。"
             }
         ]
     },

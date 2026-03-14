@@ -1,19 +1,12 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react'; // Đã xóa useEffect vì không còn dùng tới
 import { useTranslation } from 'react-i18next';
 
 export default function PromotionalPopup() {
-    const [isOpen, setIsOpen] = useState(false);
+    // Đặt state mặc định là true để popup hiện lên ngay lập tức
+    const [isOpen, setIsOpen] = useState(true); 
     const { t, i18n } = useTranslation();
-
-    useEffect(() => {
-        // TỐI ƯU: Trì hoãn 3.5 giây để trang chính load xong animation
-        const timer = setTimeout(() => {
-            setIsOpen(true);
-        }, 3500);
-        return () => clearTimeout(timer);
-    }, []);
 
     const handleClose = () => {
         setIsOpen(false);

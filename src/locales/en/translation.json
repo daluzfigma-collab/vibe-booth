@@ -139,91 +139,76 @@
         "copyright": "© {{year}} VibeBooth. All rights reserved."
     },
     "pricing": {
-        "badge": "Investment Pricing",
-        "title": "One-time investment, long-term returns",
-        "desc": "Choose the plan that fits your business scale. We make all costs transparent so you can calculate ROI easily.",
-        "hardware_label": "Hardware",
-        "software_label": "Software (Monthly)",
+        "badge": "Software Pricing",
+        "title": "Choose the right system package",
+        "title_prefix": "Investment",
+        "desc": "Flexible photobooth software solutions designed to meet your exact needs, from basic operations to exclusive brand identity systems.",
+        "hardware_label": "Package Cost",
+        "software_label": "Software",
         "plans": [
             {
-                "name": "Startup",
-                "theme": "Vibe Essentials",
-                "hardware": "60,000,000 VNĐ",
-                "software": "1,000,000 VNĐ/month",
-                "description": "For individuals wanting to try the model at small cafes/studios.",
+                "name": "Classic Package",
+                "theme": "Quick & Cost-effective",
+                "hardware": "20,000,000 VNĐ",
+                "software": "Turnkey",
+                "description": "For customers needing a quick setup with minimal edits. Includes standard photobooth app and basic installation.",
                 "features": [
-                    "Use basic filter presets",
-                    "High-speed QR sharing system",
-                    "Auto online payment via QR",
-                    "Remote technical support & bug fixes"
+                    "Change Start Screen with logo/brand name",
+                    "Change Background and Photo Frame",
+                    "Export photos (printing or sending files)",
+                    "Note: Keep original layout, flow, and no new features"
                 ],
                 "highlight": false,
                 "color": "from-slate-100 to-slate-50"
             },
             {
-                "name": "Professional",
-                "theme": "Pro AI Vibe",
-                "hardware": "75,000,000 VNĐ",
-                "software": "2,000,000 VNĐ/month",
-                "description": "Best seller. For dedicated shops needing absolute AI differentiation.",
+                "name": "Design Package",
+                "theme": "Exclusive Interface",
+                "hardware": "40,000,000 VNĐ",
+                "software": "Turnkey",
+                "description": "For brands/events wanting a unique interface. Inherits all features of the Classic package.",
                 "features": [
-                    "Full AI features: Cartoonify, AI Retouch",
-                    "Create custom color filters by brand vibe",
-                    "Flexible custom frame design",
-                    "Phone-based management dashboard",
-                    "Latest AI trending feature updates"
+                    "Custom UI design (standby, countdown, preview)",
+                    "Personalized custom photobooth layout",
+                    "Sync Theme according to brand identity standards",
+                    "Note: Uses original logic, no major feature development"
                 ],
                 "highlight": true,
                 "color": "from-teal-100 via-emerald-50 to-cyan-100"
             },
             {
-                "name": "Ecosystem",
-                "theme": "Enterprise",
-                "hardware": "Contact us",
-                "software": "4,000,000 VNĐ/month",
-                "description": "For investors wanting to lead chains or franchise operations.",
+                "name": "Limit Package",
+                "theme": "Comprehensive System",
+                "hardware": "50,000,000 VNĐ",
+                "software": "Turnkey",
+                "description": "For enterprise customers needing to build a separate system from A-Z. Inherits all benefits of the Design package.",
                 "features": [
-                    "White Label: Remove VibeBooth, show your own brand",
-                    "Multi-branch management access",
-                    "Complex integrated payment systems",
-                    "Monthly on-site maintenance"
+                    "Full custom: Shooting modes, Filters, Boomerang/GIF",
+                    "QR Download & Direct Social Media Sharing",
+                    "Build independent photo database storage",
+                    "Fully customized shooting flow (script)",
+                    "Flexible API integration / 3rd party system connection"
                 ],
                 "highlight": false,
                 "color": "from-pink-100 to-rose-50"
-            },
-            {
-                "name": "360° Service",
-                "theme": "Turnkey Solution",
-                "hardware": "Custom",
-                "software": "Turnkey",
-                "description": "Complete turnkey A-Z handover. Total shop setup ~35M - 75M VNĐ.",
-                "features": [
-                    "Concept design & 3D (5M-10M VNĐ)",
-                    "Construction & decor (15M-40M VNĐ)",
-                    "Furniture & shelving (7M-15M VNĐ)",
-                    "Thematic props & accessories combo",
-                    "Operations training (Free from 2 machines)"
-                ],
-                "highlight": false,
-                "color": "from-amber-100 to-yellow-50"
             }
         ],
-        "best_seller": "Best seller",
+        "best_seller": "Most Popular",
         "button_text": "Get consultation for this plan",
-        "why_title": "Why VibeBooth pricing gives you confidence?",
-        "why_desc": "We prioritize quality and help you dominate the market with technologies that create sustainable value.",
+        "why_title": "Why our solutions make a difference?",
+        "why_desc": "We don't just provide software; we deliver a stable operational ecosystem and unlimited customization capabilities.",
         "why": [
             {
                 "title": "Own the Core Tech",
-                "desc": "We don't resell third-party software. All code is optimized by international IT experts."
+                "desc": "No resold software. Every line of code is independently optimized for your system."
             },
             {
-                "title": "AI Personalization",
-                "desc": "Transform characters, customize presets at the Booth - features cheap machines can't do."
+                "title": "Unlimited Customization",
+                "desc": "From changing the shooting flow to external API integration, meeting your strictest requirements."
             },
             {
-                "title": "Hands-on Support",
-                "desc": "Our installation team turns an empty space into a profitable business."
+                "title": "In-depth Support",
+                "desc": "Our engineering team accompanies you from interface ideation to smooth event/shop operation."
             }
         ]
     },

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle2, Star, ShieldCheck, HeartHandshake, Code2 } from 'lucide-react';
+import { CheckCircle2, Star, ShieldCheck, HeartHandshake, Code2, AlertCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export default function PricingOptions() {
@@ -9,12 +9,11 @@ export default function PricingOptions() {
     const pricingPlans = t('pricing.plans', { returnObjects: true }) as any[];
     const whyUs = t('pricing.why', { returnObjects: true }) as any[];
     
-    // Định nghĩa lại toàn bộ style (Nền Gradient 3 màu + Viền) cho từng gói riêng biệt
+    // Đã xóa gói thứ 4, chỉ giữ 3 style cho 3 gói
     const cardStyles = [
-        "bg-gradient-to-bl from-slate-100 via-gray-50 to-slate-200 ring-4 ring-slate-300/60",     // 0: Khởi nghiệp
-        "bg-gradient-to-bl from-teal-100 via-emerald-50 to-cyan-100 ring-4 ring-teal-500/30",     // 1: Chuyên nghiệp (Giữ nguyên)
-        "bg-gradient-to-bl from-pink-100 via-rose-50 to-fuchsia-100 ring-4 ring-pink-400/40",     // 2: Hệ sinh thái
-        "bg-gradient-to-bl from-amber-100 via-yellow-50 to-orange-100 ring-4 ring-amber-400/40"   // 3: Dịch vụ
+        "bg-gradient-to-bl from-slate-100 via-gray-50 to-slate-200 ring-4 ring-slate-300/60",     // 0: Classic
+        "bg-gradient-to-bl from-teal-100 via-emerald-50 to-cyan-100 ring-4 ring-teal-500/30",     // 1: Design (Best Seller)
+        "bg-gradient-to-bl from-pink-100 via-rose-50 to-fuchsia-100 ring-4 ring-pink-400/40"      // 2: Limit
     ];
 
     // Hàm xử lý khi click nút nhận tư vấn
@@ -32,15 +31,18 @@ export default function PricingOptions() {
                         {t('pricing.badge') as string}
                     </Badge>
                     <h2 className="mb-6 text-3xl font-bold tracking-tight md:text-5xl text-slate-900">
-                        {t('pricing.title_prefix', 'Investment') as string}, <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-pink-500">{t('pricing.title') as string}</span>
+                        {t('pricing.title_prefix', 'Đầu tư') as string}{' '}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-pink-500">
+                            {t('pricing.title') as string}
+                        </span>
                     </h2>
                     <p className="text-lg text-slate-600">
                         {t('pricing.desc') as string}
                     </p>
                 </div>
 
-                {/* Pricing Cards */}
-                <div className="grid grid-cols-1 gap-6 mb-24 md:grid-cols-2 lg:grid-cols-4">
+                {/* Pricing Cards - Chuyển sang grid-cols-3 và căn giữa (max-w-6xl mx-auto) */}
+                <div className="grid max-w-6xl grid-cols-1 gap-6 mx-auto mb-24 md:grid-cols-3">
                     {pricingPlans.map((plan: any, idx: number) => (
                         <motion.div
                             key={plan.name}
@@ -55,7 +57,7 @@ export default function PricingOptions() {
                             {plan.highlight && (
                                 <div className="absolute top-0 -translate-x-1/2 -translate-y-1/2 left-1/2">
                                     <Badge className="px-4 py-1 text-xs font-bold tracking-wider text-white uppercase bg-teal-500 border-none shadow-md">
-                                        {t('pricing.best_seller', 'Bán chạy nhất') as string}
+                                        {t('pricing.best_seller', 'Được chọn nhiều nhất') as string}
                                     </Badge>
                                 </div>
                             )}
@@ -67,38 +69,56 @@ export default function PricingOptions() {
 
                             <div className="p-4 mb-6 space-y-4 bg-white/60 rounded-xl">
                                 <div>
-                                    <p className="mb-1 text-xs font-semibold tracking-wider uppercase text-slate-400">{t('pricing.hardware_label', 'Phần cứng') as string}</p>
+                                    <p className="mb-1 text-xs font-semibold tracking-wider uppercase text-slate-400">{t('pricing.hardware_label', 'Chi phí trọn gói') as string}</p>
                                     <p className="text-xl font-bold text-slate-900">{plan.hardware}</p>
                                 </div>
                                 {plan.software !== 'Turnkey' && (
                                     <div>
-                                        <p className="mb-1 text-xs font-semibold tracking-wider uppercase text-slate-400">{t('pricing.software_label', 'Phần mềm (Thuê bao)') as string}</p>
+                                        <p className="mb-1 text-xs font-semibold tracking-wider uppercase text-slate-400">{t('pricing.software_label', 'Phần mềm') as string}</p>
                                         <p className="text-lg font-bold text-teal-700">{plan.software}</p>
                                     </div>
                                 )}
                             </div>
 
-                            <p className="text-slate-600 text-sm mb-6 min-h-[40px]">
+                            <p className="text-slate-600 text-sm mb-6 min-h-[60px]">
                                 {t(`pricing.plans.${idx}.description`, plan.description) as string}
                             </p>
 
                             <ul className="flex-1 mb-8 space-y-3">
-                                {plan.features.map((feature: string, i: number) => (
-                                    <li key={i} className="flex gap-3 text-sm text-slate-700">
-                                        <CheckCircle2 className="w-5 h-5 text-teal-500 shrink-0" />
-                                        <span>{t(`pricing.plans.${idx}.features.${i}`, feature) as string}</span>
-                                    </li>
-                                ))}
+                                {plan.features.map((feature: string, i: number) => {
+                                    // Dịch chuỗi tính năng ra trước để kiểm tra
+                                    const translatedFeature = t(`pricing.plans.${idx}.features.${i}`, feature) as string;
+                                    
+                                    // Kiểm tra xem chuỗi có chứa các từ khóa Lưu ý / Note không
+                                    const isNote = translatedFeature.toLowerCase().includes('lưu ý') || 
+                                                   translatedFeature.toLowerCase().includes('note') || 
+                                                   translatedFeature.includes('注意');
+
+                                    return (
+                                        <li key={i} className="flex gap-3 text-sm text-slate-700">
+                                            {isNote ? (
+                                                <AlertCircle className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
+                                            ) : (
+                                                <CheckCircle2 className="w-5 h-5 text-teal-500 shrink-0 mt-0.5" />
+                                            )}
+                                            <span className={isNote ? "italic text-slate-500 font-medium" : ""}>
+                                                {translatedFeature}
+                                            </span>
+                                        </li>
+                                    );
+                                })}
                             </ul>
 
-                            {/* CẬP NHẬT: Thêm sự kiện onClick vào Button */}
+                            {/* Nút bấm tự động đổi màu nếu là gói Best Seller */}
                             <Button
                                 onClick={handleConsultClick}
-                                variant={plan.button as any}
-                                className={`w-full rounded-2xl h-12 font-semibold ${plan.button === 'default' ? 'bg-teal-600 hover:bg-teal-700 shadow-xl shadow-teal-500/20' : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-900'
-                                    }`}
+                                className={`w-full rounded-2xl h-12 font-semibold transition-all ${
+                                    plan.highlight 
+                                        ? 'bg-teal-600 hover:bg-teal-700 text-white shadow-xl shadow-teal-500/20' 
+                                        : 'bg-white hover:bg-slate-50 border border-slate-200 text-slate-900 shadow-sm'
+                                }`}
                             >
-                                {t('pricing.button_text') as string}
+                                {t('pricing.button_text', 'Nhận tư vấn gói này') as string}
                             </Button>
                         </motion.div>
                     ))}

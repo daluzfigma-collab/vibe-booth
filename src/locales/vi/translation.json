@@ -78,61 +78,77 @@
         "copyright": "© {{year}} VibeBooth. Bảo lưu mọi quyền."
     },
     "pricing": {
-        "badge": "Bảng giá Đầu Tư",
-        "title": "Đầu tư một lần, Lợi nhuận dài hạn",
-        "desc": "Lựa chọn gói đầu tư phù hợp với quy mô kinh doanh của bạn. Chúng tôi minh bạch mọi chi phí để bạn dễ dàng tính toán ROI.",
-        "hardware_label": "Phần cứng",
-        "software_label": "Phần mềm (Thuê bao)",
+        "badge": "Bảng giá Phần mềm",
+        "title": "Lựa chọn gói hệ thống phù hợp",
+        "title_prefix": "Đầu tư",
+        "desc": "Các gói giải pháp phần mềm Photobooth được thiết kế linh hoạt, đáp ứng chính xác nhu cầu từ vận hành cơ bản đến hệ thống nhận diện thương hiệu độc quyền.",
+        "hardware_label": "Chi phí trọn gói",
+        "software_label": "Phần mềm",
         "plans": [
             {
-                "name": "Khởi Nghiệp",
-                "theme": "Vibe Essentials",
-                "hardware": "60.000.000 VNĐ",
-                "software": "1.000.000 VNĐ/tháng",
-                "description": "Dành cho cá nhân muốn thử sức với mô hình đặt tại cafe/studio nhỏ.",
-                "features": ["Sử dụng các bộ lọc (preset) cơ bản", "Hệ thống xuất ảnh QR Sharing tốc độ cao", "Thanh toán online qua QR tự động", "Hỗ trợ kỹ thuật & vá lỗi từ xa"],
+                "name": "Gói Classic",
+                "theme": "Nhanh gọn & Tiết kiệm",
+                "hardware": "20.000.000 VNĐ",
+                "software": "Turnkey",
+                "description": "Dành cho khách cần setup nhanh, ít chỉnh sửa. Bao gồm App photobooth bản chuẩn và cài đặt cơ bản.",
+                "features": [
+                    "Thay màn hình Start Screen theo logo/tên thương hiệu",
+                    "Thay đổi Background và Frame chụp hình",
+                    "Hỗ trợ Export ảnh (in ấn hoặc gửi file)",
+                    "Lưu ý: Giữ nguyên layout, flow sử dụng và không thêm tính năng mới"
+                ],
                 "highlight": false,
                 "color": "from-slate-100 to-slate-50"
             },
             {
-                "name": "Chuyên Nghiệp",
-                "theme": "Pro AI Vibe",
-                "hardware": "75.000.000 VNĐ",
-                "software": "2.000.000 VNĐ/tháng",
-                "description": "Bán chạy nhất. Cho shop chuyên dụng cần sự khác biệt tuyệt đối về AI.",
-                "features": ["Full tính năng AI: Cartoonify, AI Retouch", "Tự tạo bộ lọc màu riêng theo brand vibe", "Thiết kế Custom Frame linh hoạt", "Dashboard quản lý trên điện thoại", "Update tính năng AI Trending mới nhất"],
+                "name": "Gói Design",
+                "theme": "Giao diện Độc quyền",
+                "hardware": "40.000.000 VNĐ",
+                "software": "Turnkey",
+                "description": "Dành cho brand / event muốn giao diện mang đậm dấu ấn riêng. Kế thừa toàn bộ tính năng của gói Classic.",
+                "features": [
+                    "Thiết kế UI theo nhu cầu (màn hình chờ, countdown, preview)",
+                    "Custom Layout photobooth cá nhân hóa",
+                    "Đồng bộ Theme theo chuẩn nhận diện thương hiệu",
+                    "Lưu ý: Sử dụng logic gốc, không phát triển tính năng lớn"
+                ],
                 "highlight": true,
                 "color": "from-teal-100 via-emerald-50 to-cyan-100"
             },
             {
-                "name": "Hệ Sinh Thái",
-                "theme": "Enterprise",
-                "hardware": "Liên hệ",
-                "software": "4.000.000 VNĐ/tháng",
-                "description": "Cho chủ đầu tư muốn chiếm lĩnh chuỗi hoặc nhượng quyền.",
-                "features": ["White Label: Gỡ logo VibeBooth, hiển thị brand riêng", "Phân quyền quản lý cho nhiều chi nhánh", "Tích hợp đồng bộ thanh toán phức hợp", "Bảo trì tận nơi định kỳ mỗi tháng"],
+                "name": "Gói Limit",
+                "theme": "Hệ thống Toàn diện",
+                "hardware": "50.000.000 VNĐ",
+                "software": "Turnkey",
+                "description": "Dành cho khách hàng doanh nghiệp cần xây dựng system riêng biệt từ A-Z. Kế thừa toàn bộ quyền lợi gói Design.",
+                "features": [
+                    "Custom full: Mode chụp, Filter, Boomerang / GIF",
+                    "Tích hợp QR Download & Share trực tiếp lên mạng xã hội",
+                    "Xây dựng Database lưu trữ dữ liệu ảnh độc lập",
+                    "Custom hoàn toàn Flow (kịch bản) chụp ảnh",
+                    "Tích hợp linh hoạt API / Kết nối hệ thống bên thứ 3"
+                ],
                 "highlight": false,
                 "color": "from-pink-100 to-rose-50"
-            },
-            {
-                "name": "Dịch Vụ 360°",
-                "theme": "Turnkey Solution",
-                "hardware": "Custom",
-                "software": "Turnkey",
-                "description": "Bàn giao chìa khóa trao tay từ A-Z. Tổng chi phí setup shop ~35M - 75M.",
-                "features": ["Thiết kế Concept & 3D (5M-10M)", "Thi công & Decor (15M-40M)", "Nội thất & Tủ kệ (7M-15M)", "Combo phụ kiện Props Thematic", "Đào tạo vận hành lễ tân (Miễn phí từ 2 máy)"],
-                "highlight": false,
-                "color": "from-amber-100 to-yellow-50"
             }
         ],
-        "best_seller": "Bán chạy nhất",
+        "best_seller": "Được chọn nhiều nhất",
         "button_text": "Nhận tư vấn gói này",
-        "why_title": "Tại sao giá VibeBooth khiến bạn an tâm?",
-        "why_desc": "Chúng tôi lấy chất lượng làm trọng tâm, giúp bạn làm chủ thị trường bằng công nghệ tạo giá trị bền vững.",
+        "why_title": "Tại sao giải pháp của chúng tôi tạo ra sự khác biệt?",
+        "why_desc": "Chúng tôi không chỉ cung cấp phần mềm, chúng tôi mang đến một hệ sinh thái vận hành ổn định và khả năng tùy biến không giới hạn.",
         "why": [
-            { "title": "Làm chủ lõi công nghệ", "desc": "Không dùng phần mềm mua đi bán lại. Mọi code tối ưu bởi chuyên gia IT quốc tế." },
-            { "title": "AI Cá nhân hóa", "desc": "Đổi nhân vật hoạt hình, tuỳ chỉnh preset ngay tại Booth." },
-            { "title": "Đồng hành thực tế", "desc": "Đội ngũ thi công biến mặt bằng trống thành điểm kinh doanh có lợi nhuận." }
+            {
+                "title": "Làm chủ lõi công nghệ",
+                "desc": "Không dùng phần mềm mua đi bán lại. Mọi dòng code được tối ưu riêng biệt cho hệ thống của bạn."
+            },
+            {
+                "title": "Tùy biến không giới hạn",
+                "desc": "Từ thay đổi flow chụp đến tích hợp API hệ thống ngoài, đáp ứng mọi yêu cầu khắt khe nhất."
+            },
+            {
+                "title": "Hỗ trợ chuyên sâu",
+                "desc": "Đội ngũ kỹ sư đồng hành từ khâu lên ý tưởng giao diện đến khi event/quán vận hành trơn tru."
+            }
         ]
     },
     "solutions": {
