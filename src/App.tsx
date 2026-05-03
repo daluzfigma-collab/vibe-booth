@@ -8,7 +8,7 @@ import Solutions from './components/sections/Solutions';
 import PricingOptions from './components/sections/PricingOptions';
 import Footer from './components/sections/Footer';
 import FloatingContact from './components/ui/FloatingContact';
-import PromotionalPopup from './components/ui/PromotionalPopup';
+// import PromotionalPopup from './components/ui/PromotionalPopup';
 
 function App() {
   return (
