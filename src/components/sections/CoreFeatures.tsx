@@ -102,7 +102,7 @@ import { useTranslation } from 'react-i18next';
 export default function CoreFeatures() {
     const { t } = useTranslation();
     return (
-        <section id="features" className="relative py-24 bg-white">
+        <section id="features" aria-label="Tính năng phần mềm Photobooth AI VibeBooth" className="relative py-24 bg-white">
             <div className="container px-4 mx-auto md:px-6">
                 <div className="max-w-3xl mx-auto mb-16 text-center">
                     <motion.div

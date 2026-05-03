@@ -1,29 +1,25 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle2, Info, Star, ShieldCheck, HeartHandshake, Code2 } from 'lucide-react';
+import { CheckCircle2, Star, ShieldCheck, HeartHandshake, Code2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export default function PricingOptions() {
     const { t } = useTranslation();
     const pricingPlans = t('pricing.plans', { returnObjects: true }) as any[];
     const whyUs = t('pricing.why', { returnObjects: true }) as any[];
-    
-    const cardStyles = [
-        "bg-gradient-to-bl from-slate-100 via-gray-50 to-slate-200 ring-4 ring-slate-300/60",    // 0: Classic
-        "bg-gradient-to-bl from-teal-100 via-emerald-50 to-cyan-100 ring-4 ring-teal-500/30",    // 1: Design (Highlight)
-        "bg-gradient-to-bl from-pink-100 via-rose-50 to-fuchsia-100 ring-4 ring-pink-400/40",    // 2: Limit
-    ];
 
     const handleConsultClick = () => {
         window.open('https://www.facebook.com/profile.php?id=61573162288644', '_blank');
     };
 
+    const plan = pricingPlans[0];
+
     return (
-        <section id="pricing" className="py-24 bg-white">
+        <section id="pricing" aria-label="Bảng giá phần mềm VibeBooth Photobooth" className="py-24 bg-white">
             <div className="container px-4 mx-auto md:px-6">
 
-                {/* Header - Phần này vẫn giữ căn giữa để cân bằng bố cục tổng thể */}
+                {/* Header */}
                 <div className="max-w-3xl mx-auto mb-16 text-center">
                     <Badge className="px-4 py-1 mb-4 text-teal-800 border-none bg-teal-100/80 hover:bg-teal-200/80">
                         {t('pricing.badge')}
@@ -36,70 +32,69 @@ export default function PricingOptions() {
                     </p>
                 </div>
 
-                {/* Pricing Cards Grid */}
-                <div className="grid max-w-6xl grid-cols-1 gap-8 mx-auto mb-24 md:grid-cols-3">
-                    {pricingPlans.map((plan: any, idx: number) => (
-                        <motion.div
-                            key={plan.name}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ delay: idx * 0.1 }}
-                            className={`relative rounded-3xl p-6 sm:p-8 flex flex-col h-full text-left ${cardStyles[idx]} ${
-                                plan.highlight ? 'scale-100 lg:scale-105 z-10 shadow-2xl' : 'shadow-lg scale-100'
-                            } transition-transform`}
-                        >
-                            {plan.highlight && (
-                                <div className="absolute top-0 -translate-x-1/2 -translate-y-1/2 left-1/2">
-                                    <Badge className="px-4 py-1 text-xs font-bold tracking-wider text-white uppercase bg-teal-500 border-none shadow-md whitespace-nowrap">
-                                        {t('pricing.best_seller')}
-                                    </Badge>
-                                </div>
-                            )}
+                {/* Full-width Pricing Card */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.5 }}
+                    className="relative mb-24 overflow-hidden rounded-3xl bg-gradient-to-bl from-teal-100 via-emerald-50 to-cyan-100 ring-4 ring-teal-500/30 shadow-2xl"
+                >
+                    {/* Decorative elements */}
+                    <div className="absolute -top-24 -right-24 w-72 h-72 bg-teal-300/20 rounded-full blur-3xl pointer-events-none" />
+                    <div className="absolute -bottom-16 -left-16 w-56 h-56 bg-emerald-300/20 rounded-full blur-3xl pointer-events-none" />
 
-                            <div className="mb-6">
+                    <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0">
+                        {/* Left - Pricing Info */}
+                        <div className="flex flex-col justify-center p-8 sm:p-10 lg:p-14">
+                            <div className="mb-2">
                                 <p className="mb-1 text-sm font-bold tracking-wide text-teal-600 uppercase">{plan.theme}</p>
-                                <h3 className="text-2xl font-bold text-slate-900">{plan.name}</h3>
+                                <h3 className="text-3xl font-bold text-slate-900 lg:text-4xl">{plan.name}</h3>
                             </div>
 
-                            <div className="p-4 mb-6 bg-white/60 rounded-xl">
-                                <p className="mb-1 text-xs font-semibold tracking-wider uppercase text-slate-400">CHI PHÍ TRỌN GÓI</p>
-                                <p className="text-2xl font-black text-slate-900">{plan.price}</p>
+                            <div className="inline-flex items-baseline gap-2 my-6">
+                                <span className="text-4xl font-black tracking-tight text-transparent lg:text-5xl bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-500">
+                                    {plan.price}
+                                </span>
                             </div>
 
-                            <p className="mb-8 text-sm leading-relaxed text-slate-600">
+                            <p className="mb-8 text-base leading-relaxed text-slate-600 max-w-md">
                                 {plan.description}
                             </p>
 
-                            <ul className="flex-1 mb-8 space-y-4">
-                                {plan.features.map((feature: string, i: number) => {
-                                    const isNote = feature.includes("Lưu ý") || feature.includes("Note") || feature.includes("注意");
-                                    return (
-                                        <li key={i} className="flex items-start gap-3 text-sm text-slate-700">
-                                            {isNote ? (
-                                                <Info className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
-                                            ) : (
-                                                <CheckCircle2 className="w-5 h-5 text-teal-500 shrink-0 mt-0.5" />
-                                            )}
-                                            <span className="leading-tight">{feature}</span>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-
                             <Button
                                 onClick={handleConsultClick}
-                                className={`w-full rounded-2xl h-12 font-bold transition-all ${
-                                    plan.highlight 
-                                    ? 'bg-teal-600 hover:bg-teal-700 text-white shadow-xl shadow-teal-500/20' 
-                                    : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-900 border'
-                                }`}
+                                className="w-full sm:w-auto sm:px-10 rounded-2xl h-14 text-base font-bold transition-all bg-teal-600 hover:bg-teal-700 text-white shadow-xl shadow-teal-500/20 hover:shadow-2xl hover:shadow-teal-500/30 hover:scale-[1.02]"
                             >
                                 {t('pricing.button_text')}
                             </Button>
-                        </motion.div>
-                    ))}
-                </div>
+                        </div>
+
+                        {/* Right - Features */}
+                        <div className="flex items-center p-8 sm:p-10 lg:p-14 lg:border-l border-t lg:border-t-0 border-teal-200/60">
+                            <div className="w-full">
+                                <p className="mb-6 text-xs font-bold tracking-widest uppercase text-teal-600/80">Bao gồm</p>
+                                <ul className="grid grid-cols-1 gap-5">
+                                    {plan.features.map((feature: string, i: number) => (
+                                        <motion.li
+                                            key={i}
+                                            initial={{ opacity: 0, x: 20 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ delay: 0.3 + i * 0.1 }}
+                                            className="flex items-start gap-4 p-4 transition-colors bg-white/50 backdrop-blur-sm rounded-2xl hover:bg-white/80"
+                                        >
+                                            <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-teal-500/10 shrink-0">
+                                                <CheckCircle2 className="w-5 h-5 text-teal-600" />
+                                            </div>
+                                            <span className="text-sm font-medium leading-relaxed text-slate-700">{feature}</span>
+                                        </motion.li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
 
                 {/* Why Choose VibeBooth? Section */}
                 <div className="glass-dark bg-slate-900 rounded-[2.5rem] p-8 md:p-16 relative overflow-hidden">

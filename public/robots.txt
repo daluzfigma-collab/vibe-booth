@@ -1,0 +1,22 @@
+# Cho phép tất cả crawlers
+User-agent: *
+Allow: /
+
+# Chặn crawl thư mục không cần thiết
+User-agent: *
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /.git/
+
+# Sitemap
+Sitemap: https://vibebooth.vn/sitemap.xml
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
