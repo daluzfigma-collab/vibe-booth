@@ -83,47 +83,21 @@
     "title": "One-time, Eternal Value",
     "desc": "Choose the software solution package that fits your brand needs.",
     "best_seller": "MOST POPULAR",
-    "button_text": "Get consultation for this plan",
+    "button_text": "Get consultation now",
     "plans": [
       {
-        "name": "Classic Package",
-        "theme": "Fast & Cost-effective",
-        "price": "20,000,000 VNĐ",
-        "description": "For clients needing quick setup with minimal edits. Includes standard photobooth app and basic setup.",
+        "name": "All-in-One Package",
+        "theme": "Comprehensive Solution",
+        "price": "From 20,000,000 VNĐ",
+        "description": "Complete professional Photobooth software solution, customizable to your business needs.",
         "features": [
-          "Change Start Screen with brand logo/name",
-          "Customize Background and Photo Frame",
-          "Photo Export support (print or digital)",
-          "Note: Keep original layout, flow, and no new features"
-        ],
-        "highlight": false
-      },
-      {
-        "name": "Design Package",
-        "theme": "Exclusive Interface",
-        "price": "40,000,000 VNĐ",
-        "description": "For brands/events wanting a signature look. Inherits all features of the Classic package.",
-        "features": [
-          "On-demand UI Design (standby, countdown, preview)",
-          "Personalized Photobooth Layout",
-          "Theme synchronization with brand identity",
-          "Note: Use base logic, no major feature development"
+          "Custom features and workflow tailored to your requirements",
+          "UI/UX Design",
+          "Content Management System (CMS)",
+          "Filters, AI, Stickers, draw on photos",
+          "Photo frame design (Design framework/Photo frame)"
         ],
         "highlight": true
-      },
-      {
-        "name": "Limit Package",
-        "theme": "Comprehensive System",
-        "price": "50,000,000 VNĐ",
-        "description": "For enterprise clients needing a bespoke system from A-Z. Inherits all benefits of the Design package.",
-        "features": [
-          "Full custom: Modes, Filters, Boomerang / GIF",
-          "QR Integration for Download & Social Sharing",
-          "Independent image Database construction",
-          "Fully customized shooting flow (scenario)",
-          "Flexible API Integration / 3rd party connections"
-        ],
-        "highlight": false
       }
     ],
     "why_title": "Why VibeBooth pricing gives you confidence?",

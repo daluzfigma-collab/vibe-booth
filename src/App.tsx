@@ -13,7 +13,7 @@ import PromotionalPopup from './components/ui/PromotionalPopup';
 function App() {
   return (
     <div className="min-h-screen bg-slate-50 selection:bg-teal-200 selection:text-teal-900 font-sans">
-      <PromotionalPopup />
+      {/* <PromotionalPopup /> */}
       <Header />
 
       <main>

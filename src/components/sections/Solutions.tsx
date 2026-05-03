@@ -63,7 +63,7 @@ export default function Solutions() {
     ];
 
     return (
-        <section id="solutions" className="relative py-24 overflow-hidden bg-slate-50">
+        <section id="solutions" aria-label="Giải pháp kinh doanh Photobooth toàn diện" className="relative py-24 overflow-hidden bg-slate-50">
             {/* Background decorations */}
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-teal-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
             <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-pink-50/50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>

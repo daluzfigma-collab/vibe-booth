@@ -83,47 +83,21 @@
     "title": "một lần, Giá trị vĩnh viễn",
     "desc": "Lựa chọn gói giải pháp phần mềm phù hợp với nhu cầu thương hiệu của bạn.",
     "best_seller": "ĐƯỢC CHỌN NHIỀU NHẤT",
-    "button_text": "Nhận tư vấn gói này",
+    "button_text": "Nhận tư vấn ngay",
     "plans": [
       {
-        "name": "Gói Classic",
-        "theme": "Nhanh gọn & Tiết kiệm",
-        "price": "20.000.000 VNĐ",
-        "description": "Dành cho khách cần setup nhanh, ít chỉnh sửa. Bao gồm App photobooth bản chuẩn và cài đặt cơ bản.",
+        "name": "Gói Trọn Bộ",
+        "theme": "Giải pháp Toàn diện",
+        "price": "Chỉ từ 20.000.000 VNĐ",
+        "description": "Trọn bộ giải pháp phần mềm Photobooth chuyên nghiệp, tùy biến theo nhu cầu doanh nghiệp của bạn.",
         "features": [
-          "Thay màn hình Start Screen theo logo/tên thương hiệu",
-          "Thay đổi Background và Frame chụp hình",
-          "Hỗ trợ Export ảnh (in ấn hoặc gửi file)",
-          "Lưu ý: Giữ nguyên layout, flow sử dụng và không thêm tính năng mới"
-        ],
-        "highlight": false
-      },
-      {
-        "name": "Gói Design",
-        "theme": "Giao diện Độc quyền",
-        "price": "40.000.000 VNĐ",
-        "description": "Dành cho brand / event muốn giao diện mang đậm dấu ấn riêng. Kế thừa toàn bộ tính năng của gói Classic.",
-        "features": [
-          "Thiết kế UI theo nhu cầu (màn hình chờ, countdown, preview)",
-          "Custom Layout photobooth cá nhân hóa",
-          "Đồng bộ Theme theo chuẩn nhận diện thương hiệu",
-          "Lưu ý: Sử dụng logic gốc, không phát triển tính năng lớn"
+          "Tùy chỉnh tính năng và quy trình (workflow) theo yêu cầu",
+          "Thiết kế giao diện (UI/UX Design)",
+          "Hệ thống quản trị nội dung (CMS)",
+          "Bộ lọc (Filter), AI, Sticker, vẽ lên ảnh",
+          "Thiết kế khung ảnh (Design framework/Photo frame)"
         ],
         "highlight": true
-      },
-      {
-        "name": "Gói Limit",
-        "theme": "Hệ thống Toàn diện",
-        "price": "50.000.000 VNĐ",
-        "description": "Dành cho khách hàng doanh nghiệp cần xây dựng system riêng biệt từ A-Z. Kế thừa toàn bộ quyền lợi gói Design.",
-        "features": [
-          "Custom full: Mode chụp, Filter, Boomerang / GIF",
-          "Tích hợp QR Download & Share trực tiếp lên mạng xã hội",
-          "Xây dựng Database lưu trữ dữ liệu ảnh độc lập",
-          "Custom hoàn toàn Flow (kịch bản) chụp ảnh",
-          "Tích hợp linh hoạt API / Kết nối hệ thống bên thứ 3"
-        ],
-        "highlight": false
       }
     ],
     "why_title": "Tại sao giá VibeBooth khiến bạn an tâm?",

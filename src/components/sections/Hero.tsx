@@ -26,7 +26,7 @@ export default function Hero() {
     };
 
     return (
-        <section className="relative flex items-center min-h-screen pt-32 pb-20 overflow-hidden md:pt-48 md:pb-32">
+        <section aria-label="VibeBooth - Giải pháp Photobooth AI hàng đầu Việt Nam" className="relative flex items-center min-h-screen pt-32 pb-20 overflow-hidden md:pt-48 md:pb-32">
             {/* Decorative Blob */}
             <div className="absolute rounded-full top-1/4 left-1/4 w-96 h-96 bg-teal-300/30 mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
             <div className="absolute rounded-full top-1/3 right-1/4 w-96 h-96 bg-pink-300/30 mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
@@ -82,7 +82,7 @@ export default function Hero() {
                             <div className="absolute inset-0 opacity-50 bg-gradient-to-tr from-pink-100/40 via-transparent to-teal-100/40"></div>
                             <img
                                 src="/photobooth_3d.png"
-                                alt="VibeBooth 3D Teardrop Camper Setup"
+                                alt="VibeBooth Photobooth AI - Hệ thống PhotoBoothVN chuyên nghiệp cho quán cafe, sự kiện và chuỗi kinh doanh"
                                 className="relative z-10 object-cover w-full h-auto rounded-2xl drop-shadow-2xl"
                             />
                             {/* Floating feature badges */}

@@ -18,7 +18,7 @@ export default function Footer() {
                             {/* Thay đổi logo từ div chứa chữ sang thẻ img */}
                             <img 
                                 src="/vibeBoothLogo.png" 
-                                alt="VibeBooth Logo" 
+                                alt="VibeBooth - Giải pháp Photobooth AI hàng đầu Việt Nam" 
                                 className="object-contain w-auto h-10 rounded-lg"
                             />
                             <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400">
