@@ -78,6 +78,9 @@ export default function ConceptGallery() {
                                     <img
                                         src={concept.img}
                                         alt={t(`conceptGallery.concepts.${concept.id - 1}.title`)}
+                                        loading={concept.id === 1 ? "eager" : "lazy"}
+                                        width={600}
+                                        height={800}
                                         className="object-cover w-full h-full transition-transform duration-700 ease-out group-hover:scale-110"
                                         onError={(e) => {
                                             e.currentTarget.src = `https://placehold.co/600x800/f8fafc/94a3b8?text=Concept+${concept.id}`;

@@ -103,7 +103,7 @@ export default function Solutions() {
 
                         <div className="flex flex-col gap-4">
                             {spaceFeatures.map((f, i) => (
-                                <div key={i} className="flex items-start gap-4 p-5 transition-colors bg-white border shadow-sm rounded-2xl border-slate-100 group hover:border-teal-200">
+                                <div key={i} className="flex items-start gap-4 p-5 transition-colors bg-white border-2 shadow-sm rounded-2xl border-teal-200 group hover:border-red-400">
                                     <div className="flex items-center justify-center w-10 h-10 transition-all rounded-full bg-teal-50 shrink-0 group-hover:bg-teal-100 group-hover:scale-110">
                                         {f.icon}
                                     </div>
@@ -137,7 +137,7 @@ export default function Solutions() {
 
                         <div className="flex flex-col gap-4">
                             {opFeatures.map((f, i) => (
-                                <div key={i} className="flex items-start gap-4 p-5 transition-colors bg-white border shadow-sm rounded-2xl border-slate-100 group hover:border-pink-200">
+                                <div key={i} className="flex items-start gap-4 p-5 transition-colors bg-white border-2 shadow-sm rounded-2xl border-teal-200 group hover:border-red-400">
                                     <div className="flex items-center justify-center w-10 h-10 transition-all rounded-full bg-pink-50 shrink-0 group-hover:bg-pink-100 group-hover:scale-110">
                                         {f.icon}
                                     </div>
@@ -171,7 +171,7 @@ export default function Solutions() {
 
                         {roadmapSteps.map((step) => (
                             <div key={step.step} className="relative flex flex-col items-center w-full text-center group md:w-1/5">
-                                <div className="z-10 flex items-center justify-center mb-4 font-bold transition-colors bg-white border-4 rounded-full shadow-sm w-14 h-14 border-slate-100 text-slate-400 group-hover:border-teal-400 group-hover:text-teal-500">
+                                <div className="z-10 flex items-center justify-center mb-4 font-bold transition-colors bg-white border-4 rounded-full shadow-sm w-14 h-14 border-teal-300 text-teal-500 group-hover:border-red-400 group-hover:text-red-500">
                                     {step.icon}
                                 </div>
                                 <div className="px-3 py-1 mb-2 text-xs font-bold rounded-full bg-slate-50 text-slate-400">{t('solutions.roadmap_step_prefix', 'STEP')} {step.step}</div>
