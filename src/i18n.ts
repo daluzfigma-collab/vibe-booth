@@ -18,6 +18,14 @@ i18n
     .init({
         resources,
         fallbackLng: 'vi',
+        detection: {
+            // Thứ tự ưu tiên: URL query (?lang=vi) → localStorage (người dùng đã chọn trước đó)
+            // KHÔNG dùng navigator (ngôn ngữ trình duyệt) → luôn fallback về 'vi' cho lần đầu
+            order: ['querystring', 'localStorage'],
+            lookupQuerystring: 'lang',
+            lookupLocalStorage: 'i18nextLng',
+            caches: ['localStorage'],
+        },
         interpolation: {
             escapeValue: false
         }
